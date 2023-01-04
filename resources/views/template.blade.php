@@ -13,29 +13,29 @@
   <body class="d-flex flex-column min-vh-100">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="{{ route('home') }}">Barbatos Shop</a>
+            <a class="navbar-brand" href="#">Evoba</a>
+            <a class="navbar-brand" href="#">Food Bloggers</a>
+            <a class="navbar-brand" href="#">Location</a>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
-                    <li class="nav-item dropdown">
+                    <li class="navbar-brand dropdown">
                         <a class="nav-link dropdown-toggle " href="/" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Category
+                            Kategori
                         </a>
                         <ul class="dropdown-menu aria-labelledby" id="navbarDropdownMenuLink d-grid gap-1 p-2 rounded-3 mx-0 shadow w-220px">
-                            <li><a class="dropdown-item rounded-2" href="{{ route('display_products_per_category', ['id'=> 1]) }}">Beauty</a></li>
-                            <li><a class="dropdown-item rounded-2" href="{{   route('display_products_per_category', ['id'=> 2]) }}">Kitchen Supplies</a></li>
-                            <li><a class="dropdown-item rounded-2" href="{{   route('display_products_per_category', ['id'=> 3]) }}">Electronics</a></li>
+                            <li><a class="dropdown-item rounded-2" href="#">Chinese Food</a></li>
+                            <li><a class="dropdown-item rounded-2" href="#">Japanese Food</a></li>
+                            <li><a class="dropdown-item rounded-2" href="#">Indonesian Food</a></li>
+                            <li><a class="dropdown-item rounded-2" href="#">Western Food</a></li>
                         </ul>
                     </li>
-
-                    @yield('manage_products')
-
                 </ul>
             </div>
             <div class="btn-toolbar">
-                <form action="{{route('login')}}">
+                <form action="#">
                     <button type="submit" class="btn btn-link text-decoration-none">Login</button>
                 </form>
-                <form action="{{route('register')}}">
+                <form action="#">
                     <button type="submit" class="btn btn-link text-decoration-none">Register</button>
                 </form>
             </div>

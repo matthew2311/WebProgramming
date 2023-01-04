@@ -4,6 +4,6 @@ Barbatos Shop | Home
 
 @extends('template')
 
-@section
+@section('body')
     <h1>hahahah</h1>
 @endsection
