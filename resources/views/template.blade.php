@@ -24,10 +24,10 @@
                                 Kategori
                             </a>
                             <ul class="navbar-brand dropdown-menu aria-labelledby text-decoration-none">
-                                <li><a class="dropdown-item rounded-2 px-2 link-dark" href="#">Chinese Food</a></li>
-                                <li><a class="dropdown-item rounded-2 px-2 link-dark" href="#">Japanese Food</a></li>
-                                <li><a class="dropdown-item rounded-2 px-2 link-dark" href="#">Indonesian Food</a></li>
-                                <li><a class="dropdown-item rounded-2 px-2 link-dark" href="#">Western Food</a></li>
+                                <li><a class="dropdown-item rounded-2" href="#">Chinese Food</a></li>
+                                <li><a class="dropdown-item rounded-2" href="#">Japanese Food</a></li>
+                                <li><a class="dropdown-item rounded-2" href="#">Indonesian Food</a></li>
+                                <li><a class="dropdown-item rounded-2" href="#">Western Food</a></li>
                             </ul>
                         </li>
                     </ul>
