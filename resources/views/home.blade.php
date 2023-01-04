@@ -11,15 +11,21 @@
                 <div class="col-lg-7 col-md-8 mx-auto teks" style="color: white;">
                     <h1 style="font-weight: bolder; font-size: 40px;">Temukan Makanan dan Minuman Terbaik Setiap Harinya</h1>
                 </div>
+                <div class="input-group py-3 mb-4">
+                    <input type="search" class="form-control" placeholder="Search" aria-label="Search"
+                        aria-describedby="search-addon" />
+                    <button type="button" class="btn btn-danger">Search</button>
+                </div>
             </div>
         </section>
+
     </main>
-    <div class="container">
-        <div
-            class="input-group d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4">
-            <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
-                aria-describedby="search-addon" />
-            <button type="button" class="btn btn-outline-primary">search</button>
-        </div>
+
+    <div class="container py-3 px-15">
+        <p class="text-desc">
+            Sekarang mencari tempat hangout menjadi
+            jauh lebih mudah dengan Evoba! Temukan tempat makan yang direkomendasi dan dikurasi khusus untuk kamu oleh food
+            bloggers favoritmu
+        </p>
     </div>
 @endsection

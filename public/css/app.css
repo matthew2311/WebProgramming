@@ -7658,6 +7658,18 @@ fieldset:disabled .btn {
     background-color: #FCF6E0 !important;
 }
 
+.text-desc {
+    color: #0D3B66 !important;
+    text-align: center;
+}
+
+.px-15 {
+    padding-right: 15rem !important;
+    padding-left: 15rem !important;
+    font-weight: bold;
+    font-size: 25px;
+}
+
 .background {
     background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)), url(.././storage/images/BackgroundHome.jpg);
     background-repeat: no-repeat;
