@@ -43,44 +43,24 @@
             </header>
         </div>
 
-        {{-- <div class="container">
-
-            <a class="navbar-brand" href="#">Evoba</a>
-            <a class="navbar-brand" href="#">Food Bloggers</a>
-            <a class="navbar-brand" href="#">Location</a>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="navbar-brand dropdown">
-                        <a class="navbar-brand dropdown-toggle " href="/" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Kategori
-                        </a>
-                        <ul class="navbar-brand dropdown-menu aria-labelledby" id="navbarDropdownMenuLink d-grid gap-1 p-2 rounded-3 mx-0 shadow w-220px">
-                            <li><a class="dropdown-item rounded-2" href="#">Chinese Food</a></li>
-                            <li><a class="dropdown-item rounded-2" href="#">Japanese Food</a></li>
-                            <li><a class="dropdown-item rounded-2" href="#">Indonesian Food</a></li>
-                            <li><a class="dropdown-item rounded-2" href="#">Western Food</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <div class="btn-toolbar">
-                <form action="#">
-                    <button type="submit" class="btn btn-link text-decoration-none">Login</button>
-                </form>
-                <form action="#">
-                    <button type="submit" class="btn btn-link text-decoration-none">Register</button>
-                </form>
-            </div>
-        </div> --}}
-    {{-- </nav> --}}
-
     @yield('body')
 
     <br>
     <br>
 
-    <footer class="bg-light navbar-light mt-auto">
-        <p class="text-center text-muted">© Barbatos Shop</p>
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+          <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+            <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+          </a>
+          <span class="mb-3 mb-md-0 text-muted">© Evoba</span>
+        </div>
+
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+          <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
+          <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+          <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+        </ul>
     </footer>
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
