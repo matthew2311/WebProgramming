@@ -1,5 +1,5 @@
 @section('title')
-Evoba | Home
+Barbatos Shop | Home
 @endsection
 
 @extends('template')
