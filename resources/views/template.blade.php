@@ -41,7 +41,7 @@
                     <li><a href="#" class="nav-link px-2 text-navbar">Food Bloggers</a></li>
                     <li><a href="#" class="nav-link px-2 text-navbar">Locations</a></li>
                     <li><a href="#" class="nav-link px-2 text-navbar">Locations</a></li>
-                    <li class="av-link px-2 text-navbar dropdown">
+                    <li class="nav-link px-2 text-navbar dropdown">
                         <a class="navbar-brand dropdown-toggle text-decoration-none px-2" href="/"
                             id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown">
                             Kategori
