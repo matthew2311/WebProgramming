@@ -6689,6 +6689,17 @@ textarea.form-control-lg {
   background-color: RGBA(33, 37, 41, var(--bs-bg-opacity, 1)) !important;
 }
 
+.text-bg-navbar {
+  color: #fff !important;
+  background-color: #FCF6E0 !important;
+}
+
+.text-navbar{
+  --bs-text-opacity: 1;
+  font-weight: bold;
+  color: #B63D42 !important;
+}
+
 .link-primary {
   color: #0d6efd !important;
 }

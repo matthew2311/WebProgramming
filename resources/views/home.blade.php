@@ -1,9 +1,9 @@
 @section('title')
-Evoba | Home
+Barbatos Shop | Home
 @endsection
 
 @extends('template')
 
 @section('body')
-    <h1>hahahah</h1>
+    <h1>TEST</h1>
 @endsection
