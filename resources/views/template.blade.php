@@ -11,36 +11,37 @@
     <title>@yield('title')</title>
   </head>
   <body class="d-flex flex-column min-vh-100">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    {{-- <nav class="navbar navbar-expand-lg navbar-light bg-light"> --}}
         <div class="container">
-            <a class="navbar-brand" href="#">Evoba</a>
-            <a class="navbar-brand" href="#">Food Bloggers</a>
-            <a class="navbar-brand" href="#">Location</a>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="navbar-brand dropdown">
-                        <a class="nav-link dropdown-toggle " href="/" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Kategori
-                        </a>
-                        <ul class="dropdown-menu aria-labelledby" id="navbarDropdownMenuLink d-grid gap-1 p-2 rounded-3 mx-0 shadow w-220px">
-                            <li><a class="dropdown-item rounded-2" href="#">Chinese Food</a></li>
-                            <li><a class="dropdown-item rounded-2" href="#">Japanese Food</a></li>
-                            <li><a class="dropdown-item rounded-2" href="#">Indonesian Food</a></li>
-                            <li><a class="dropdown-item rounded-2" href="#">Western Food</a></li>
-                        </ul>
-                    </li>
+            <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+                <span class="fs-4">Evoba</span>
+                <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="#" class="nav-link px-2 link-dark">Food Bloggers</a></li>
+                    <li><a href="#" class="nav-link px-2 link-dark">Location</a></li>
+                    <ul class="navbar-nav">
+                        <li class="navbar-brand dropdown">
+                            <a class="navbar-brand dropdown-toggle text-decoration-none px-2 link-dark" href="/" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown">
+                                Kategori
+                            </a>
+                            <ul class="navbar-brand dropdown-menu aria-labelledby text-decoration-none">
+                                <li><a class="dropdown-item rounded-2" href="#">Chinese Food</a></li>
+                                <li><a class="dropdown-item rounded-2" href="#">Japanese Food</a></li>
+                                <li><a class="dropdown-item rounded-2" href="#">Indonesian Food</a></li>
+                                <li><a class="dropdown-item rounded-2" href="#">Western Food</a></li>
+                            </ul>
+                        </li>
+                    </ul>
                 </ul>
-            </div>
-            <div class="btn-toolbar">
-                <form action="#">
-                    <button type="submit" class="btn btn-link text-decoration-none">Login</button>
-                </form>
-                <form action="#">
-                    <button type="submit" class="btn btn-link text-decoration-none">Register</button>
-                </form>
-            </div>
+                <div class="btn-toolbar">
+                    <form action="#">
+                        <button type="submit" class="btn btn-link text-decoration-none">Login</button>
+                    </form>
+                    <form action="#">
+                        <button type="submit" class="btn btn-link text-decoration-none">Register</button>
+                    </form>
+                </div>
+            </header>
         </div>
-    </nav>
 
     <div class="conta">
         @yield('body')
@@ -49,8 +50,24 @@
     <br>
     <br>
 
+<<<<<<< HEAD
     <footer class="bg-light navbar-light mt-auto">
         <p class="text-center text-muted">© Evoba 2023</p>
+=======
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+          <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+            <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+          </a>
+          <span class="mb-3 mb-md-0 text-muted">© Evoba</span>
+        </div>
+
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+          <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
+          <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+          <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+        </ul>
+>>>>>>> 97e91acf3bb96191eb53faaf97242e2b080158ed
     </footer>
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
