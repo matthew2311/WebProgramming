@@ -40,69 +40,24 @@
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 ms-4">
                     <li><a href="#" class="nav-link px-2 text-navbar">Food Bloggers</a></li>
                     <li><a href="#" class="nav-link px-2 text-navbar">Locations</a></li>
-                    <li><a href="#" class="nav-link px-2 text-navbar">Locations</a></li>
-                    <li class="av-link px-2 text-navbar dropdown">
-                        <a class="navbar-brand dropdown-toggle text-decoration-none px-2" href="/"
+                    <li class="nav-link px-2 text-navbar dropdown">
+                        <a class="navbar-brand dropdown-toggle text-decoration-none" href="/"
                             id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown">
                             Kategori
                         </a>
                         <ul class="navbar-brand dropdown-menu aria-labelledby text-decoration-none">
-                            <li><a class="dropdown-item rounded-2" href="#">Chinese Food</a></li>
-                            <li><a class="dropdown-item rounded-2" href="#">Japanese Food</a></li>
-                            <li><a class="dropdown-item rounded-2" href="#">Indonesian Food</a></li>
-                            <li><a class="dropdown-item rounded-2" href="#">Western Food</a></li>
+                            <li><a class="dropdown-item rounded-2 text-navbar" href="#">Chinese Food</a></li>
+                            <li><a class="dropdown-item rounded-2 text-navbar" href="#">Japanese Food</a></li>
+                            <li><a class="dropdown-item rounded-2 text-navbar" href="#">Indonesian Food</a></li>
+                            <li><a class="dropdown-item rounded-2 text-navbar" href="#">Western Food</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
         </div>
     </header>
+    @yield('body')
     <div class="container">
-        {{-- <header
-            class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-            <div class="container d-flex flex-wrap">
-                <span class="fs-4">Evoba</span>
-                <ul class="nav me-auto">
-                    <li class="nav-item"><a href="#" class="nav-link link-dark px-2 active"
-                            aria-current="page">Home</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link link-dark px-2 active">Locations</a></li>
-                    <ul class="navbar-nav">
-                        <li class="navbar-brand dropdown">
-                            <a class="navbar-brand dropdown-toggle text-decoration-none px-2 link-dark" href="/"
-                                id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown">
-                                Kategori
-                            </a>
-                            <ul class="navbar-brand dropdown-menu aria-labelledby text-decoration-none">
-                                <li><a class="dropdown-item rounded-2" href="#">Chinese Food</a></li>
-                                <li><a class="dropdown-item rounded-2" href="#">Japanese Food</a></li>
-                                <li><a class="dropdown-item rounded-2" href="#">Indonesian Food</a></li>
-                                <li><a class="dropdown-item rounded-2" href="#">Western Food</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </ul>
-            </div> --}}
-        {{-- <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="#" class="nav-link px-2 link-dark">Food Bloggers</a></li>
-                <li><a href="#" class="nav-link px-2 link-dark">Location</a></li>
-                <ul class="navbar-nav">
-                    <li class="navbar-brand dropdown">
-                        <a class="navbar-brand dropdown-toggle text-decoration-none px-2 link-dark" href="/"
-                            id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown">
-                            Kategori
-                        </a>
-                        <ul class="navbar-brand dropdown-menu aria-labelledby text-decoration-none">
-                            <li><a class="dropdown-item rounded-2" href="#">Chinese Food</a></li>
-                            <li><a class="dropdown-item rounded-2" href="#">Japanese Food</a></li>
-                            <li><a class="dropdown-item rounded-2" href="#">Indonesian Food</a></li>
-                            <li><a class="dropdown-item rounded-2" href="#">Western Food</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </ul> --}}
-        {{-- </header> --}}
-
-        @yield('body')
 
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
             <div class="col-md-4 d-flex align-items-center ms-3">
