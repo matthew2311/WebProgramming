@@ -42,13 +42,15 @@
         </div>
     </nav>
 
-    @yield('body')
+    <div class="conta">
+        @yield('body')
+    </div>
 
     <br>
     <br>
 
     <footer class="bg-light navbar-light mt-auto">
-        <p class="text-center text-muted">© Barbatos Shop</p>
+        <p class="text-center text-muted">© Evoba 2023</p>
     </footer>
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
