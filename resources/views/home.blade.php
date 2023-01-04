@@ -14,7 +14,7 @@
                         </div>
                     @endif
                     <h1>HALLO</h1>
-                    <h1>HELLO - Marcel J</h1>
+                    <h1>HELLO - Marcel Jonathan</h1>
                     {{ __('You are logged in!') }}
                 </div>
             </div>
