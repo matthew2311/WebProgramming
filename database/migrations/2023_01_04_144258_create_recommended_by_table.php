@@ -15,7 +15,8 @@ class CreateRecommendedByTable extends Migration
     {
         Schema::create('recommended_by', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->foreignId('restaurant_id')->constrained('restaurants', 'id');
+            $table->foreignId('food_blogger_id')->constrained('categories', 'id');
         });
     }
 

@@ -15,7 +15,12 @@ class CreateFoodBloggersTable extends Migration
     {
         Schema::create('food_bloggers', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('food_blogger_name');
+            $table->string('food_blogger_description', 5000);
+            $table->string('food_blogger_ig_link', 500);
+            $table->string('food_blogger_tiktok_link', 500);
+            $table->string('food_blogger_youtube_link', 500);
+            $table->string('food_blogger_image');
         });
     }
 
