@@ -5,5 +5,5 @@ Evoba | Home
 @extends('template')
 
 @section('body')
-    <h1>hahahah</h1>
+    <h1>TEST</h1>
 @endsection
