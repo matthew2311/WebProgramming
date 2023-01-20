@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRecommendedByTable extends Migration
+class CreateRecommendedBiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateRecommendedByTable extends Migration
      */
     public function up()
     {
-        Schema::create('recommended_by', function (Blueprint $table) {
+        Schema::create('recommended_bies', function (Blueprint $table) {
             $table->id();
             $table->foreignId('restaurant_id')->constrained('restaurants', 'id');
             $table->foreignId('food_blogger_id')->constrained('categories', 'id');
@@ -27,6 +27,6 @@ class CreateRecommendedByTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('recommended_by');
+        Schema::dropIfExists('recommended_bies');
     }
 }

@@ -50,7 +50,8 @@
                             <li><a class="dropdown-item rounded-2 text-navbar" href="#">Japanese Food</a></li>
                             <li><a class="dropdown-item rounded-2 text-navbar" href="#">Indonesian Food</a></li>
                             <li><a class="dropdown-item rounded-2 text-navbar" href="#">Western Food</a></li>
-                            <li><a class="dropdown-item rounded-2 text-navbar" href="#">Indian Food</a></li>
+                            <li><a class="dropdown-item rounded-2 text-navbar" href="#">Italian Food</a></li>
+                            <li><a class="dropdown-item rounded-2 text-navbar" href="#">Dessert</a></li>
                         </ul>
                     </li>
                 </ul>
