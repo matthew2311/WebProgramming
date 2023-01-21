@@ -22,6 +22,8 @@ class CreateRestaurantsTable extends Migration
             $table->string('restaurant_whatsapp_link', 1000)->nullable();
             $table->string('restaurant_instagram_link', 1000)->nullable();
             $table->string('restaurant_tiktok_link', 1000)->nullable();
+            $table->string('restaurant_gofood', 1000)->nullable();
+            $table->string('restaurant_grabfood', 1000)->nullable();
             $table->string('restaurant_image', 500);
             $table->foreignId('restaurant_category_id')->constrained('categories', 'id');
         });

@@ -17,15 +17,15 @@ class CategorySeeder extends Seeder
         $categories = [
             [
                 "id" => 1,
-                "category_name" => "Chinese Food"
+                "category_name" => "Indonesian Food"
             ],
             [
                 "id" => 2,
-                "category_name" => "Japanese Food"
+                "category_name" => "Chinese Food"
             ],
             [
                 "id" => 3,
-                "category_name" => "Indonesian Food"
+                "category_name" => "Japanese Food"
             ],
             [
                 "id" => 4,
@@ -33,11 +33,11 @@ class CategorySeeder extends Seeder
             ],
             [
                 "id" => 5,
-                "category_name" => "Italian"
+                "category_name" => "Italian Food"
             ],
             [
                 "id" => 6,
-                "category_name" => "Dessert" 
+                "category_name" => "Dessert"
             ],
         ];
 

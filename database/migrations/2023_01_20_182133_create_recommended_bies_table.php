@@ -16,7 +16,7 @@ class CreateRecommendedBiesTable extends Migration
         Schema::create('recommended_bies', function (Blueprint $table) {
             $table->id();
             $table->foreignId('restaurant_id')->constrained('restaurants', 'id');
-            $table->foreignId('food_blogger_id')->constrained('categories', 'id');
+            $table->foreignId('food_blogger_id')->constrained('food_bloggers', 'id');
         });
     }
 
