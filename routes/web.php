@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\homeController;
+use App\Http\Controllers\restaurantController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,5 +20,5 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', [homeController::class, 'home'])->name('home');
-
+Route::get('/restaurantdetail', [restaurantController::class, 'detail'])->name('restaurant_detail');
 
