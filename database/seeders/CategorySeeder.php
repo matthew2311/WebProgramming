@@ -37,7 +37,7 @@ class CategorySeeder extends Seeder
             ],
             [
                 "id" => 6,
-                "category_name" => "Dessert"
+                "category_name" => "Dessert" 
             ],
         ];
 

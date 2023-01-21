@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
             "id" => 1,
                 "name" => "Admin",
                 "email" => "admin@evoba.com",
-                "password" => Hash::make('AdminEvoba#123')
+                "password" => Hash::make('AdminEvoba123')
         ]);
     }
 }

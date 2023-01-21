@@ -27,11 +27,20 @@ class FoodBloggerSeeder extends Seeder
             [
                 "id" => 2,
                 "food_blogger_name" => "Ken & Grat",
-                "food_blogger_description" => "Ken & Grat merintis karir sebagai Youtuber sejak 29 September 2015 yang diawali dengan hobi mereka untuk makan. Sampai saat ini, Ken & Grat telah memiliki 2,69 juta subscriber dan memiiki beberapa bisnis di bidang kuliner (Nyayap) dan real estate (Wangsa Serpong). ",
+                "food_blogger_description" => "Ken & Grat merintis karir sebagai Youtuber sejak 29 September 2015 yang diawali dengan hobi mereka untuk makan. Sampai saat ini, Ken & Grat telah memiliki 2,69 juta subscriber dan memiiki beberapa bisnis di bidang kuliner (Nyayap) dan real estate (Wangsa Serpong).",
                 "food_blogger_ig_link" => "https://www.instagram.com/kenandgrat/",
                 "food_blogger_tiktok_link" => "https://www.tiktok.com/@kenandgratt",
                 "food_blogger_youtube_link" => "https://www.youtube.com/@Kenandgrat",
                 "food_blogger_image" => "https://images.bisnis.com/posts/2020/07/02/1260641/img-20200702-wa0027_copy_800x618.jpg",
+            ],
+            [
+                "id" => 3,
+                "food_blogger_name" => "Cindy Lulaby",
+                "food_blogger_description" => "Cindy Lulaby adalah seorang food blogger yang membahas makanan dari semua level mulai dari makanan yang kekinian sampai dengan makanan dengan harga terjangkau yang ada di daerah-daerah.",
+                "food_blogger_ig_link" => "https://www.instagram.com/cnlulaby/",
+                "food_blogger_tiktok_link" => "https://www.tiktok.com/@cnlulaby",
+                "food_blogger_youtube_link" => "",
+                "food_blogger_image" => "https://starngage.com/wp-content/uploads/2019/05/7.-Cindy-Lulaby.jpg",
             ]
         ];
 
