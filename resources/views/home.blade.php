@@ -32,13 +32,13 @@
             <div class="col-md-6">
                 <div class="h-90 p-4 border rounded-4" style="background-color: #EF8354">
                     <p style="color: white; font-size: 22px">Lihat Rekomendasi Food Blogger!</p>
-                    <a href="" class="btn btn-light"><span style="font-weight: bold">Lihat</span></a>
+                    <a href="{{route('restaurantIndex')}}" class="btn btn-light"><span style="font-weight: bold">Lihat</span></a>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="h-90 p-4 border rounded-4" style="background-color: #EF8354">
                     <p style="color: white; font-size: 22px">Cari Food Blogger Favoritmu Di Sini!</p>
-                    <a href="" class="btn btn-light"><span style="font-weight: bold">Cari</span></a>
+                    <a href="{{route('foodBloggerIndex')}}" class="btn btn-light"><span style="font-weight: bold">Cari</span></a>
                 </div>
             </div>
         </div>
@@ -49,31 +49,31 @@
             <div class="col-md-6 mb-4">
                 <div class="h-80 p-4 border rounded-4 flex" style="background-color: #F1F1F1">
                     <p>Jakarta Utara</p>
-                    <a href="" class="btn btn-light"><span style="font-weight: bold">Lihat</span></a>
+                    <a href="{{route('restaurantLocation', ['loc' => "Jakarta Utara"])}}" class="btn btn-light"><span style="font-weight: bold">Lihat</span></a>
                 </div>
             </div>
             <div class="col-md-6 mb-4">
                 <div class="h-80 p-4 border rounded-4" style="background-color: #F1F1F1">
                     <p>Jakarta Selatan</p>
-                    <a href="" class="btn btn-light"><span style="font-weight: bold">Lihat</span></a>
+                    <a href="{{route('restaurantLocation', ['loc' => "Jakarta Selatan"])}}" class="btn btn-light"><span style="font-weight: bold">Lihat</span></a>
                 </div>
             </div>
             <div class="col-md-6 mb-4">
                 <div class="h-80 p-4 border rounded-4" style="background-color: #F1F1F1">
                     <p>Jakarta Barat</p>
-                    <a href="" class="btn btn-light"><span style="font-weight: bold">Lihat</span></a>
+                    <a href="{{route('restaurantLocation', ['loc' => "Jakarta Barat"])}}" class="btn btn-light"><span style="font-weight: bold">Lihat</span></a>
                 </div>
             </div>
             <div class="col-md-6 mb-4">
                 <div class="h-80 p-4 border rounded-4" style="background-color: #F1F1F1">
                     <p>Jakarta Timur</p>
-                    <a href="" class="btn btn-light"><span style="font-weight: bold">Lihat</span></a>
+                    <a href="{{route('restaurantLocation', ['loc' => "Jakarta Timur"])}}" class="btn btn-light"><span style="font-weight: bold">Lihat</span></a>
                 </div>
             </div>
             <div class="col-md-6 mb-4">
                 <div class="h-80 p-4 border rounded-4" style="background-color: #F1F1F1">
                     <p>Jakarta Pusat</p>
-                    <a href="" class="btn btn-light"><span style="font-weight: bold">Lihat</span></a>
+                    <a href="{{route('restaurantLocation', ['loc' => "Jakarta Pusat"])}}" class="btn btn-light"><span style="font-weight: bold">Lihat</span></a>
                 </div>
             </div>
         </div>

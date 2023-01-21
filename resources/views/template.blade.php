@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
     <title>@yield('title')</title>
 </head>
@@ -38,20 +38,20 @@
                 </a>
 
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 ms-4">
-                    <li><a href="#" class="nav-link px-2 text-navbar">Food Bloggers</a></li>
-                    <li><a href="#" class="nav-link px-2 text-navbar">Locations</a></li>
+                    <li><a href="{{route('foodBloggerIndex')}}" class="nav-link px-2 text-navbar">Food Bloggers</a></li>
+                    <li><a href="{{route('restaurantLocationView')}}" class="nav-link px-2 text-navbar">Lokasi</a></li>
                     <li class="nav-link px-2 text-navbar dropdown">
                         <a class="navbar-brand dropdown-toggle text-decoration-none" href="/"
                             id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown">
                             Kategori
                         </a>
                         <ul class="navbar-brand dropdown-menu aria-labelledby text-decoration-none">
-                            <li><a class="dropdown-item rounded-2 text-navbar" href="#">Indonesian Food</a></li>
-                            <li><a class="dropdown-item rounded-2 text-navbar" href="#">Chinese Food</a></li>
-                            <li><a class="dropdown-item rounded-2 text-navbar" href="#">Japanese Food</a></li>
-                            <li><a class="dropdown-item rounded-2 text-navbar" href="#">Western Food</a></li>
-                            <li><a class="dropdown-item rounded-2 text-navbar" href="#">Italian Food</a></li>
-                            <li><a class="dropdown-item rounded-2 text-navbar" href="#">Dessert</a></li>
+                            <li><a class="dropdown-item rounded-2 text-navbar" href="{{route('categoryIndex', ['id' => 1])}}">Indonesian Food</a></li>
+                            <li><a class="dropdown-item rounded-2 text-navbar" href="{{route('categoryIndex', ['id' => 2])}}">Chinese Food</a></li>
+                            <li><a class="dropdown-item rounded-2 text-navbar" href="{{route('categoryIndex', ['id' => 3])}}">Japanese Food</a></li>
+                            <li><a class="dropdown-item rounded-2 text-navbar" href="{{route('categoryIndex', ['id' => 4])}}">Western Food</a></li>
+                            <li><a class="dropdown-item rounded-2 text-navbar" href="{{route('categoryIndex', ['id' => 5])}}">Italian Food</a></li>
+                            <li><a class="dropdown-item rounded-2 text-navbar" href="{{route('categoryIndex', ['id' => 6])}}">Dessert</a></li>
                         </ul>
                     </li>
                 </ul>
