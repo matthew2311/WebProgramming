@@ -39,7 +39,7 @@ class FoodBloggerSeeder extends Seeder
                 "food_blogger_description" => "Cindy Lulaby adalah seorang food blogger yang membahas makanan dari semua level mulai dari makanan yang kekinian sampai dengan makanan dengan harga terjangkau yang ada di daerah-daerah.",
                 "food_blogger_ig_link" => "https://www.instagram.com/cnlulaby/",
                 "food_blogger_tiktok_link" => "https://www.tiktok.com/@cnlulaby",
-                "food_blogger_youtube_link" => "",
+                "food_blogger_youtube_link" => NULL,
                 "food_blogger_image" => "https://starngage.com/wp-content/uploads/2019/05/7.-Cindy-Lulaby.jpg",
             ],
             [
@@ -66,7 +66,7 @@ class FoodBloggerSeeder extends Seeder
                 "food_blogger_description" => "Audrey Karenina adalah salah satu food blogger yang aktif pada instagram dan tiktok mempromosikan berbagai macam tempat makanan maupun makanan yang enak di Indonesia.",
                 "food_blogger_ig_link" => "https://www.instagram.com/audreykareninaa",
                 "food_blogger_tiktok_link" => "https://www.tiktok.com/@audreykareninaa",
-                "food_blogger_youtube_link" => "",
+                "food_blogger_youtube_link" => NULL,
                 "food_blogger_image" => "https://p16.tiktokcdn.com/tos-useast2a-avt-0068-giso/385e9a20f275c18fa449abe7513e9f66~c5_720x720.jpeg",
             ],
             [
@@ -93,7 +93,7 @@ class FoodBloggerSeeder extends Seeder
                 "food_blogger_description" => "Foodventurer dibuat oleh Prawnche yang memiliki ketertarikan pada food, travel, dan lifestyle. Ia juga membuat blog untuk ikut menyalurkan ketertarikannya di https://foodventurer.me/",
                 "food_blogger_ig_link" => "https://www.instagram.com/foodventurer_",
                 "food_blogger_tiktok_link" => "https://www.tiktok.com/@prawnche",
-                "food_blogger_youtube_link" => "",
+                "food_blogger_youtube_link" => NULL,
                 "food_blogger_image" => "https://starngage.com/wp-content/uploads/2019/05/18.-Prawnche.jpg",
             ],
             [
