@@ -46,9 +46,9 @@
                             Kategori
                         </a>
                         <ul class="navbar-brand dropdown-menu aria-labelledby text-decoration-none">
+                            <li><a class="dropdown-item rounded-2 text-navbar" href="#">Indonesian Food</a></li>
                             <li><a class="dropdown-item rounded-2 text-navbar" href="#">Chinese Food</a></li>
                             <li><a class="dropdown-item rounded-2 text-navbar" href="#">Japanese Food</a></li>
-                            <li><a class="dropdown-item rounded-2 text-navbar" href="#">Indonesian Food</a></li>
                             <li><a class="dropdown-item rounded-2 text-navbar" href="#">Western Food</a></li>
                             <li><a class="dropdown-item rounded-2 text-navbar" href="#">Italian Food</a></li>
                             <li><a class="dropdown-item rounded-2 text-navbar" href="#">Dessert</a></li>
