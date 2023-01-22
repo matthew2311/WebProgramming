@@ -11,10 +11,13 @@
                 <div class="col-lg-7 col-md-8 mx-auto teks" style="color: white;">
                     <h1 style="font-weight: bolder; font-size: 40px;">Temukan Makanan dan Minuman Terbaik Setiap Harinya</h1>
                 </div>
-                <div class="input-group py-3 mb-4">
-                    <input type="search" class="form-control" placeholder="Search" aria-label="Search"
-                        aria-describedby="search-addon" />
-                    <button type="button" class="btn btn-danger">Search</button>
+                <div class="py-3 mb-4">
+                    <form action="{{route('search')}}">
+                        @csrf
+                        <input type="search" class="form-control" placeholder="Cari Food Blogger Favoritmu..." aria-label="Search" aria-describedby="search-addon" name="search_food_blogger_name">
+                        <button type="submit" class="btn btn-danger">Cari</button>
+                    </form>
+
                 </div>
             </div>
         </section>

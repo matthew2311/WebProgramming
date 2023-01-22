@@ -28,5 +28,9 @@
         </div>
     @endif
 
+    <div style="margin: 2rem">
+        {{$restaurantLoc->links()}}
+    </div>
+
 </div>
 @endsection

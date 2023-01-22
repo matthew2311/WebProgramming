@@ -30,5 +30,9 @@
             </div>
         @endif
     </div>
+
+    <div style="margin: 2rem">
+        {{$restaurants->links()}}
+    </div>
 </div>
 @endsection

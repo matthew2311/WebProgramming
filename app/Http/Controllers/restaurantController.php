@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class restaurantController extends Controller
 {
     public function restaurantIndex(){
-        $restaurants = RecommendedBy::all()->shuffle();
+        $restaurants = RecommendedBy::paginate(10)->withQueryString();
 
         return view('restaurantRecommendation', compact('restaurants'));
     }
@@ -22,7 +22,7 @@ class restaurantController extends Controller
     }
 
     public function categoryIndex(Request $request){
-        $restaurantCategory = Restaurant::where('restaurant_category_id', $request->id)->get();
+        $restaurantCategory = Restaurant::where('restaurant_category_id', $request->id)->get()->shuffle();
 
         $categoryName = Category::where('id', $request->id)->first();
 
@@ -44,7 +44,7 @@ class restaurantController extends Controller
     }
 
     public function restaurantLocation(Request $request){
-        $restaurantLoc = Restaurant::where('restaurant_city', $request->loc)->get()->shuffle();
+        $restaurantLoc = Restaurant::where('restaurant_city', $request->loc)->paginate(10)->withQueryString();
         $loc = $request->loc;
 
         return view('recommendationByLocation', compact('restaurantLoc', 'loc'));

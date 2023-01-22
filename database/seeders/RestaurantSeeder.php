@@ -69,7 +69,7 @@ class RestaurantSeeder extends Seeder
                 "restaurant_gofood" => "https://gofood.co.id/id/jakarta/restaurant/shaburi-puri-indah-mall-12c0e911-538c-4d73-9a54-a196e0b43f82",
                 "restaurant_grabfood" => "https://food.grab.com/id/id/restaurant/shaburi-puri-indah-mall-delivery/6-CYXEL3LULYK1C2",
                 "restaurant_image" => "https://b.zmtcdn.com/data/pictures/7/18037757/4104db6232539def89a0ba6a0fae79e9.jpg",
-                "restaurant_category_id" => 2,
+                "restaurant_category_id" => 3,
             ],
             [
                 "id" => 5,
@@ -152,7 +152,7 @@ class RestaurantSeeder extends Seeder
                 "restaurant_tiktok_link" => "https://www.tiktok.com/@fudgybro",
                 "restaurant_gofood" => "https://gofood.co.id/id/jakarta/restaurant/fudgybro-kelapa-gading-1a45bd12-e6c2-49f9-a622-53eb94e0cdbe",
                 "restaurant_grabfood" => NULL,
-                "restaurant_image" => "https://10619-2.s.cdn12.com/rests/original/106_504918219.jpg",
+                "restaurant_image" => "https://assets-pergikuliner.com/66Orxv1Yag3rYrltFPbghqUx814=/fit-in/1366x768/smart/filters:no_upscale()/https://assets-pergikuliner.com/uploads/image/picture/2268145/picture-1626843353.jpg",
                 "restaurant_category_id" => 6,
             ],
             [
@@ -194,7 +194,7 @@ class RestaurantSeeder extends Seeder
                 "restaurant_tiktok_link" => NULL,
                 "restaurant_gofood" => "https://gofood.co.id/id/jakarta/restaurant/nasi-ayam-dewata-oleh-raja-rawit-sunter-9cde69e1-e9b4-43f4-affc-7b0dd36309ff",
                 "restaurant_grabfood" => "https://food.grab.com/id/id/restaurant/nasi-ayam-dewata-oleh-raja-rawit-sunter-agung-delivery/6-C22UVRATNBVKSA",
-                "restaurant_image" => "https://b.zmtcdn.com/data/pictures/5/18427685/2bf2fdcfa82429f0bdc83d86c0e22750.jpg",
+                "restaurant_image" => "https://assets-pergikuliner.com/eeFEzteCv96AqcG_9QDuKfwuWSs=/fit-in/1366x768/smart/filters:no_upscale()/https://assets-pergikuliner.com/uploads/image/picture/2556996/picture-1657695867.jpg",
                 "restaurant_category_id" => 1,
             ],
             [
@@ -265,7 +265,7 @@ class RestaurantSeeder extends Seeder
                 "restaurant_gofood" => "https://gofood.co.id/id/jakarta/restaurant/ichisan-ramen-tanjung-duren-f5c91603-6df1-4623-9d87-c22363633744",
                 "restaurant_grabfood" => "https://food.grab.com/id/id/restaurant/ichisan-tanjung-duren-selatan-delivery/6-C2T1MGCECPD1CX",
                 "restaurant_image" => "https://media-cdn.yummyadvisor.com/store/108af3d9-65e8-42bb-b203-4015dd549847.jpeg?x-oss-process=style/type_11",
-                "restaurant_category_id" => 5,
+                "restaurant_category_id" => 3,
             ],
             [
                 "id" => 19,

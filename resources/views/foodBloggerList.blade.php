@@ -21,10 +21,6 @@
                         <div class="card-body">
                             <h5 class="card-title" style="color: #0D3B66">{{$fb->food_blogger_name}}</h5>
                             @foreach ($recommend as $r)
-                                {{-- @if ($r->foodBloggerID == $fb->id)
-                                    <p class="card-text" style="color: #0D3B66">{{$r->recommendationTotal}} rekomendasi</p>
-                                    @break
-                                @endif --}}
                                 @if ($r->foodBloggerID == $fb->id)
                                     <p class="card-text" style="color: #0D3B66">{{$r->recommendationTotal}} rekomendasi</p>
                                     @break

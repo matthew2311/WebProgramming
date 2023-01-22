@@ -36,4 +36,4 @@ Route::get('/foodblogger/all', [foodBloggerController::class, 'foodBloggerIndex'
 
 Route::get('/foodblogger/detail/{id}', [foodBloggerController::class, 'foodBloggerDetail'])->name('foodBloggerDetail');
 
-
+Route::get('/search', [homeController::class, 'search'])->name('search');

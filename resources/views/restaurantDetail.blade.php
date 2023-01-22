@@ -27,12 +27,23 @@
                         </div>
                         <br>
                         <div class="card-text">
-                            Direkomendasikan oleh:
-                            <br>
-                            @foreach ($restaurant_detail as $rd1)
-                                - {{$rd1->foodBlogger->food_blogger_name}}
+                            {{-- Cek yang rekomendasiin ada berapa orang --}}
+                            @if(count($restaurant_detail) < 2)
+                                {{-- cuma satu yang rekomendasiin restorannya --}}
+                                @foreach ($restaurant_detail as $rd1)
+                                    Direkomendasikan oleh: {{$rd1->foodBlogger->food_blogger_name}}
+                                    <br>
+                                @endforeach
+                            @else
+                                {{-- lebih dari satu yang rekomendasiin restorannya --}}
+                                Direkomendasikan oleh:
                                 <br>
-                            @endforeach
+                                @foreach ($restaurant_detail as $rd1)
+                                    - {{$rd1->foodBlogger->food_blogger_name}}
+                                    <br>
+                                @endforeach
+                            @endif
+
                         </div>
                         <br>
 
@@ -72,6 +83,5 @@
         </div>
         @break
     @endforeach
-
 </div>
 @endsection

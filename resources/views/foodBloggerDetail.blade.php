@@ -27,7 +27,7 @@
                 <a href="{{$foodBlogger->food_blogger_tiktok_link}}" target="_blank" class="btn btn-dark"><i class="bi bi-tiktok"></i> TikTok</a>
             @endif
             @if ($foodBlogger->food_blogger_youtube_link != NULL)
-                <a href="{{$foodBlogger->ffood_blogger_youtube_link}}" target="_blank" class="btn btn-danger"><i class="bi bi-youtube"></i> YouTube</a>
+                <a href="{{$foodBlogger->food_blogger_youtube_link}}" target="_blank" class="btn btn-danger"><i class="bi bi-youtube"></i> YouTube</a>
             @endif
         </div>
     </div>
