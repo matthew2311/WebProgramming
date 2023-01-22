@@ -1,57 +1,14 @@
 @extends('Layouts.template')
 
 @section('title')
-    Evoba | Home
+    Evoba | Lokasi
 @endsection
 
 @section('body')
-    <main class="background">
-        <section class="py-5 container text-center">
-            <div class="row py-lg-5 mt-5">
-                <div class="col-lg-7 col-md-8 mx-auto teks" style="color: white;">
-                    <h1 style="font-weight: bolder; font-size: 40px;">Temukan Makanan dan Minuman Terbaik Setiap Harinya</h1>
-                </div>
-                <div class="py-3 mb-4 justify-content-center d-flex">
-                    <form action="{{ route('search') }}" class="d-flex" style="width: 50%;">
-                        @csrf
-                        <input type="search" class="form-control" placeholder="Cari Food Blogger Favorit Anda"
-                            aria-label="Search" aria-describedby="search-addon" name="search_food_blogger_name">
-                        <button type="submit" class="btn btn-danger">Cari</button>
-                    </form>
-
-                </div>
-            </div>
-        </section>
-
-    </main>
-
     <div class="container py-3 px-15">
-        <p class="text-desc mb-3">
-            Sekarang mencari tempat hangout menjadi
-            jauh lebih mudah dengan Evoba! Temukan tempat makan yang direkomendasi dan dikurasi khusus untuk kamu oleh food
-            bloggers favoritmu
-        </p>
-
-        <div class="row align-items-md-stretch mb-4">
-            <div class="col-md-6 home" style="padding-right: 0px; padding-left: 0px;">
-                <a href="{{ route('restaurantIndex') }}" class="btn">
-                    <div class="h-90 p-4 border rounded-4" style="background-color: #EF8354">
-                        <p style="color: white; font-size: 26px; text-align: left"><b>Lihat Semua Rekomendasi Food
-                                Bloggers!</b></p>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-6 home" style="padding-right: 0px; padding-left: 0px;">
-                <a href="{{ route('foodBloggerIndex') }}" class="btn">
-                    <div class="h-90 p-4 border rounded-4" style="background-color: #EF8354">
-                        <p style="color: white; font-size: 26px; text-align: left"><b>Cari Food Blogger Favoritmu Di
-                                Sini!</b></p>
-                    </div>
-                </a>
-            </div>
+        <div class="mt-4 mb-3">
+            <h2 style="color: #B63D42; font-weight: bold">Tempat Populer Saat Ini</h2>
         </div>
-
-        <h2 class="mb-4" style="color: #B63D42; font-weight: bold">Tempat Populer Saat Ini</h2>
 
         <div class="row align-items-md-stretch">
             <a href="{{ route('restaurantLocation', ['loc' => 'jakarta-utara']) }}"
@@ -140,5 +97,7 @@
                 </div>
             </a>
         </div>
+
+
     </div>
 @endsection

@@ -6,19 +6,20 @@ use App\Models\Category;
 use App\Models\RecommendedBy;
 use App\Models\Restaurant;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
-class restaurantController extends Controller
+class RestaurantController extends Controller
 {
     public function restaurantIndex(){
         $restaurants = RecommendedBy::paginate(10)->withQueryString();
 
-        return view('restaurantRecommendation', compact('restaurants'));
+        return view('Customer.restaurantRecommendation', compact('restaurants'));
     }
 
     public function restaurantDetail(Request $request){
         $restaurant_detail = RecommendedBy::where('restaurant_id', $request->id)->get();
 
-        return view('restaurantDetail', compact('restaurant_detail'));
+        return view('Customer.restaurantDetail', compact('restaurant_detail'));
     }
 
     public function categoryIndex(Request $request){
@@ -26,7 +27,7 @@ class restaurantController extends Controller
 
         $categoryName = Category::where('id', $request->id)->first();
 
-        return view('categoryDetail', compact('restaurantCategory', 'categoryName'));
+        return view('Customer.categoryDetail', compact('restaurantCategory', 'categoryName'));
     }
 
     public function restaurantLocationView(){
@@ -40,13 +41,16 @@ class restaurantController extends Controller
         //     $r->total = $total;
         // }
 
-        return view('location');
+        return view('Customer.location');
     }
 
     public function restaurantLocation(Request $request){
-        $restaurantLoc = Restaurant::where('restaurant_city', $request->loc)->paginate(10)->withQueryString();
-        $loc = $request->loc;
+        $location = Str::replace('-', ' ', $request->loc);
+        $resto = Restaurant::where('restaurant_city', Str::replace('-', ' ', $request->loc))->first();
+        $restaurantLoc = Restaurant::where('restaurant_city', Str::replace('-', ' ', $request->loc))->paginate(9)->withQueryString();
 
-        return view('recommendationByLocation', compact('restaurantLoc', 'loc'));
+        $loc = $resto->restaurant_city;
+
+        return view('Customer.recommendationByLocation', compact('restaurantLoc', 'loc'));
     }
 }

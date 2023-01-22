@@ -20,20 +20,20 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', [homeController::class, 'home'])->name('home');
+Route::get('/', [HomeController::class, 'home'])->name('home');
 
-Route::get('/restaurant/all', [restaurantController::class, 'restaurantIndex'])->name('restaurantIndex');
+Route::get('/restaurant/all', [RestaurantController::class, 'restaurantIndex'])->name('restaurantIndex');
 
-Route::get('/restaurant/detail/{id}', [restaurantController::class, 'restaurantDetail'])->name('restaurantDetail');
+Route::get('/restaurant/detail/{id}', [RestaurantController::class, 'restaurantDetail'])->name('restaurantDetail');
 
-Route::get('/restaurant/category/{id}', [restaurantController::class, 'categoryIndex'])->name('categoryIndex');
+Route::get('/restaurant/category/{id}', [RestaurantController::class, 'categoryIndex'])->name('categoryIndex');
 
-Route::get('/restaurant/location', [restaurantController::class, 'restaurantLocationView'])->name('restaurantLocationView');
+Route::get('/restaurant/location', [RestaurantController::class, 'restaurantLocationView'])->name('restaurantLocationView');
 
-Route::get('/restaurant/location/{loc}', [restaurantController::class, 'restaurantLocation'])->name('restaurantLocation');
+Route::get('/restaurant/location/{loc}', [RestaurantController::class, 'restaurantLocation'])->name('restaurantLocation');
 
-Route::get('/foodblogger/all', [foodBloggerController::class, 'foodBloggerIndex'])->name('foodBloggerIndex');
+Route::get('/foodblogger/all', [FoodBloggerController::class, 'foodBloggerIndex'])->name('foodBloggerIndex');
 
-Route::get('/foodblogger/detail/{id}', [foodBloggerController::class, 'foodBloggerDetail'])->name('foodBloggerDetail');
+Route::get('/foodblogger/detail/{id}', [FoodBloggerController::class, 'foodBloggerDetail'])->name('foodBloggerDetail');
 
-Route::get('/search', [homeController::class, 'search'])->name('search');
+Route::get('/search', [HomeController::class, 'search'])->name('search');

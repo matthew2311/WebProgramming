@@ -7663,6 +7663,12 @@ fieldset:disabled .btn {
     text-align: center;
 }
 
+.home:hover{
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    translate: scale(1.1);
+}
+
 .px-15 {
     padding-right: 15rem !important;
     padding-left: 15rem !important;

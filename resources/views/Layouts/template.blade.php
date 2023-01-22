@@ -6,10 +6,27 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+    {{--
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    --}}
 
     <title>@yield('title')</title>
 </head>
@@ -38,27 +55,37 @@
                 </a>
 
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 ms-4">
-                    <li><a href="{{route('foodBloggerIndex')}}" class="nav-link px-2 text-navbar">Food Bloggers</a></li>
-                    <li><a href="{{route('restaurantLocationView')}}" class="nav-link px-2 text-navbar">Lokasi</a></li>
+                    <li><a href="{{ route('foodBloggerIndex') }}" class="nav-link px-2 text-navbar">Food Bloggers</a>
+                    </li>
+                    <li><a href="{{ route('restaurantLocationView') }}" class="nav-link px-2 text-navbar">Lokasi</a>
+                    </li>
                     <li class="nav-link px-2 text-navbar dropdown">
                         <a class="navbar-brand dropdown-toggle text-decoration-none" href="/"
-                            id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown">
+                            data-bs-toggle="dropdown">
                             Kategori
                         </a>
-                        <ul class="navbar-brand dropdown-menu aria-labelledby text-decoration-none">
-                            <li><a class="dropdown-item rounded-2 text-navbar" href="{{route('categoryIndex', ['id' => 1])}}">Indonesian Food</a></li>
-                            <li><a class="dropdown-item rounded-2 text-navbar" href="{{route('categoryIndex', ['id' => 2])}}">Chinese Food</a></li>
-                            <li><a class="dropdown-item rounded-2 text-navbar" href="{{route('categoryIndex', ['id' => 3])}}">Japanese Food</a></li>
-                            <li><a class="dropdown-item rounded-2 text-navbar" href="{{route('categoryIndex', ['id' => 4])}}">Western Food</a></li>
-                            <li><a class="dropdown-item rounded-2 text-navbar" href="{{route('categoryIndex', ['id' => 5])}}">Italian Food</a></li>
-                            <li><a class="dropdown-item rounded-2 text-navbar" href="{{route('categoryIndex', ['id' => 6])}}">Dessert</a></li>
+                        <ul class="navbar-brand dropdown-menu aria-labelledby text-decoration-none p-1">
+                            <li><a class="dropdown-item rounded-2 text-navbar"
+                                    href="{{ route('categoryIndex', ['id' => 1]) }}">Indonesian Food</a></li>
+                            <li><a class="dropdown-item rounded-2 text-navbar"
+                                    href="{{ route('categoryIndex', ['id' => 2]) }}">Chinese Food</a></li>
+                            <li><a class="dropdown-item rounded-2 text-navbar"
+                                    href="{{ route('categoryIndex', ['id' => 3]) }}">Japanese Food</a></li>
+                            <li><a class="dropdown-item rounded-2 text-navbar"
+                                    href="{{ route('categoryIndex', ['id' => 4]) }}">Western Food</a></li>
+                            <li><a class="dropdown-item rounded-2 text-navbar"
+                                    href="{{ route('categoryIndex', ['id' => 5]) }}">Italian Food</a></li>
+                            <li><a class="dropdown-item rounded-2 text-navbar"
+                                    href="{{ route('categoryIndex', ['id' => 6]) }}">Dessert</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
         </div>
     </header>
+
     @yield('body')
+
     <div class="container">
 
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
@@ -82,11 +109,6 @@
             </ul>
         </footer>
     </div>
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
 </body>
 
 </html>
