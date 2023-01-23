@@ -23,7 +23,14 @@ class RestaurantController extends Controller
     }
 
     public function categoryIndex(Request $request){
-        $restaurantCategory = Restaurant::where('restaurant_category_id', $request->id)->get()->shuffle();
+        $restaurantCategory_filter = Restaurant::where('restaurant_category_id', $request->id)->get()->shuffle();
+
+        $restaurantCategory = [];
+
+        foreach($restaurantCategory_filter as $rf){
+            $restaurant_cat = RecommendedBy::where('restaurant_id', $rf->id)->get();
+            array_push($restaurantCategory, $restaurant_cat);
+        }
 
         $categoryName = Category::where('id', $request->id)->first();
 
@@ -31,10 +38,29 @@ class RestaurantController extends Controller
     }
 
     public function restaurantLocationView(){
-        // $loc1 = ;
-        // $loc2 = ;
+        $loc1_filter = Restaurant::where('restaurant_city', 'Jakarta Utara')->get()->random(2);
+        $loc2_filter = Restaurant::where('restaurant_city', 'Jakarta Pusat')->get()->random(2);
+        $loc3_filter = Restaurant::where('restaurant_city', 'Jakarta Barat')->get()->random(2);
 
-        return view('Customer.Restaurant.location');
+        $loc1 = [];
+        foreach($loc1_filter as $lf){
+            $restaurant_jakut = RecommendedBy::where('restaurant_id', $lf->id)->get();
+            array_push($loc1, $restaurant_jakut);
+        }
+
+        $loc2 = [];
+        foreach($loc2_filter as $lf){
+            $restaurant_jakpus = RecommendedBy::where('restaurant_id', $lf->id)->get();
+            array_push($loc2, $restaurant_jakpus);
+        }
+
+        $loc3 = [];
+        foreach($loc3_filter as $lf){
+            $restaurant_jakbar = RecommendedBy::where('restaurant_id', $lf->id)->get();
+            array_push($loc3, $restaurant_jakbar);
+        }
+
+        return view('Customer.Restaurant.location', compact('loc1', 'loc2', 'loc3'));
     }
 
     public function restaurantLocation(Request $request){
