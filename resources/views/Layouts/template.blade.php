@@ -31,7 +31,7 @@
     <title>@yield('title')</title>
 </head>
 
-<body class="d-flex flex-column min-vh-100" style="background-color: #CCD2E3">
+<body class="d-flex flex-column min-vh-100 {{ request()->is('admin/login') ? 'admin' : 'generalUser' }}">
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
         <symbol id="facebook" viewBox="0 0 16 16">
             <path
