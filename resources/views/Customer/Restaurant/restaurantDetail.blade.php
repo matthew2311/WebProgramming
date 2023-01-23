@@ -9,7 +9,7 @@
         <div class="mt-4">
             <h2 style="color: #0D3B66"><b>Detail Restaurant</b></h2>
         </div>
-        {{-- <h3 class="mt-5 ml-3">{{$restaurant_detail->restaurant_name}}</h3> --}}
+
         @foreach ($restaurant_detail as $rd)
             <div class="card mx-auto my-auto mt-3 p-3" style="width: 1000px; background-color: #EF8354">
                 <div class="row g-0">

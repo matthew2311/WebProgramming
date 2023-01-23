@@ -7,12 +7,13 @@
 @section('body')
     <div class="container">
         <div class="mt-4 mb-3">
-            <h2 style="color: #0D3B66">Semua Restoran Rekomendasi Food Blogger</h2>
+            <h2 style="color: #0D3B66"><b>Semua Restoran Rekomendasi Food Blogger</b></h2>
         </div>
 
         <div class="d-flex flex-row mb-3">
             @if (count($restaurants) < 1)
-                <h2>Maaf, Belum Ada Restoran yang Bisa Ditampilkan untuk Saat Ini. Terima Kasih.</h2>
+                <h2 class="mt-3 text-center">Maaf, Belum Ada Restoran yang Bisa Ditampilkan untuk Saat Ini. Terima Kasih.
+                </h2>
             @else
                 <div class="row pt-1">
                     @foreach ($restaurants as $r)

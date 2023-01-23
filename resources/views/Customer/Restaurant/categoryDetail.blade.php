@@ -13,7 +13,7 @@
 
         <div class="d-flex flex-row mb-3 mt-3">
             @if (count($restaurantCategory) < 1)
-                <h2 class="mt-3">Maaf, Tidak Ada Restoran untuk Kategori {{ $categoryName->category_name }}.</h2>
+                <h2 class="mt-3 text-center">Maaf, Tidak Ada Restoran untuk Kategori {{ $categoryName->category_name }}.</h2>
             @else
                 <div class="row row-cols-5">
                     @foreach ($restaurantCategory as $res_cat)

@@ -11,7 +11,7 @@
         </div>
 
         @if (count($restaurantLoc) < 1)
-            <h2 class="mt-3">Maaf, Kami Belum Dapat Menampilkan Restoran di {{ $loc }} untuk Saat Ini.</h2>
+            <h2 class="mt-3 text-center">Maaf, Kami Belum Dapat Menampilkan Restoran di {{ $loc }} untuk Saat Ini.</h2>
         @else
             <div class="row row-cols-5">
                 @foreach ($restaurantLoc as $rl)

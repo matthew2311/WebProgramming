@@ -12,7 +12,7 @@
 
         <div class="d-flex flex-row mb-3">
             @if (count($foodBloggers) < 1)
-                <h2 class="mt-3">Maaf, Belum Ada Food Blogger yang Bisa Ditampilkan untuk Saat Ini. Terima Kasih.</h2>
+                <h2 class="mt-3 text-center">Maaf, Belum Ada Food Blogger yang Bisa Ditampilkan untuk Saat Ini. Terima Kasih.</h2>
             @else
                 <div class="row pt-1">
                     @foreach ($foodBloggers as $fb)

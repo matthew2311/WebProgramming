@@ -7,12 +7,12 @@
 @section('body')
     <div class="container">
         <div class="mt-4 mb-3">
-            <h2 style="color: #0D3B66">Hasil Pencarianmu</h2>
+            <h2 style="color: #0D3B66"><b>Hasil Pencarianmu</b></h2>
         </div>
 
         <div class="d-flex flex-row mb-3">
             @if (count($search_results) < 1)
-                <h2 class="mt-3">Maaf, Kami Tidak Dapat Menemukan Food Blogger yang Anda Cari.</h2>
+                <h2 class="mt-3 text-center">Maaf, Kami Tidak Dapat Menemukan Food Blogger yang Anda Cari.</h2>
             @else
                 <div class="row pt-1">
                     @foreach ($search_results as $sr)
