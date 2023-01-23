@@ -7,7 +7,7 @@
 @section('body')
     <div class="container">
         <div class="mt-4 mb-3">
-            <h2>Restoran di {{ $loc }}</h2>
+            <h2 style="color: #0D3B66; font-weight: bold">Restoran di {{ $loc }}</h2>
         </div>
 
         @if (count($restaurantLoc) < 1)

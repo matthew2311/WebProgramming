@@ -98,10 +98,105 @@
             </a>
         </div>
 
-        <h2 style="color: #0D3B66; font-weight: bold">Restoran di Jakarta Utara</h2>
+        @if (count($loc1) > 0)
+            <h2 style="color: #0D3B66; font-weight: bold">Restoran di Jakarta Utara</h2>
+            @foreach ($loc1 as $lc1)
+                @foreach ($lc1 as $l1)
+                    <div class="col-sm-4 mb-4 d-flex">
+                        <a href="{{ route('restaurantDetail', ['id' => $l1->restaurant_id]) }}"
+                            style="text-decoration: none">
+                            <div class="card home br-2" style="width: 100%">
+                                <img class="card-img-top" src="{{ asset($l1->restaurant->restaurant_image) }}"
+                                    height="250px">
+                                <div class="card-body" style="background-color: #EAEAEA">
+                                    <h5 class="card-title" style="color: #0D3B66; margin-bottom: 0.3rem">
+                                        <b>{{ Str::limit($l1->restaurant->restaurant_name, 30) }}</b>
+                                    </h5>
+                                    <p class="card-text" style="color: #0D3B66; margin-bottom: 0.1rem">
+                                        {{ $l1->restaurant->category->category_name }} </p>
+                                    <p class="card-text" style="color: #0D3B66; margin-bottom: 0.1rem">
+                                        {{ $l1->restaurant->restaurant_city }} </p>
+                                    <div class="card-text d-flex" style="color: #0D3B66; margin-bottom: 0.1rem">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/411/411724.png" height="25px"
+                                            width="25px">
+                                        <p class="card-text" style="margin-top: 1.5px; margin-left: 3px;">
+                                            <b>Direkomendasikan oleh {{ $l1->foodBlogger->food_blogger_name }}</b>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                @endforeach
+            @endforeach
+        @endif
 
+        @if (count($loc2) > 0)
+            <h2 style="color: #0D3B66; font-weight: bold">Restoran di Jakarta Pusat</h2>
+            @foreach ($loc2 as $lc2)
+                @foreach ($lc2 as $l2)
+                    <div class="col-sm-4 mb-4 d-flex">
+                        <a href="{{ route('restaurantDetail', ['id' => $l2->restaurant_id]) }}"
+                            style="text-decoration: none">
+                            <div class="card home br-2" style="width: 100%">
+                                <img class="card-img-top" src="{{ asset($l2->restaurant->restaurant_image) }}"
+                                    height="250px">
+                                <div class="card-body" style="background-color: #EAEAEA">
+                                    <h5 class="card-title" style="color: #0D3B66; margin-bottom: 0.3rem">
+                                        <b>{{ Str::limit($l2->restaurant->restaurant_name, 30) }}</b>
+                                    </h5>
+                                    <p class="card-text" style="color: #0D3B66; margin-bottom: 0.1rem">
+                                        {{ $l2->restaurant->category->category_name }} </p>
+                                    <p class="card-text" style="color: #0D3B66; margin-bottom: 0.1rem">
+                                        {{ $l2->restaurant->restaurant_city }} </p>
+                                    <div class="card-text d-flex" style="color: #0D3B66; margin-bottom: 0.1rem">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/411/411724.png" height="25px"
+                                            width="25px">
+                                        <p class="card-text" style="margin-top: 1.5px; margin-left: 3px;">
+                                            <b>Direkomendasikan oleh {{ $l2->foodBlogger->food_blogger_name }}</b>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                @endforeach
+            @endforeach
+        @endif
 
-        <h2 style="color: #0D3B66; font-weight: bold">Restoran di Jakarta Pusat</h2>
+        @if (count($loc3) > 0)
+            <h2 style="color: #0D3B66; font-weight: bold">Restoran di Jakarta Barat</h2>
+            @foreach ($loc3 as $lc3)
+                @foreach ($lc3 as $l3)
+                    <div class="col-sm-4 mb-4 d-flex">
+                        <a href="{{ route('restaurantDetail', ['id' => $l3->restaurant_id]) }}"
+                            style="text-decoration: none">
+                            <div class="card home br-2" style="width: 100%">
+                                <img class="card-img-top" src="{{ asset($l3->restaurant->restaurant_image) }}"
+                                    height="250px">
+                                <div class="card-body" style="background-color: #EAEAEA">
+                                    <h5 class="card-title" style="color: #0D3B66; margin-bottom: 0.3rem">
+                                        <b>{{ Str::limit($l3->restaurant->restaurant_name, 30) }}</b>
+                                    </h5>
+                                    <p class="card-text" style="color: #0D3B66; margin-bottom: 0.1rem">
+                                        {{ $l3->restaurant->category->category_name }} </p>
+                                    <p class="card-text" style="color: #0D3B66; margin-bottom: 0.1rem">
+                                        {{ $l3->restaurant->restaurant_city }} </p>
+                                    <div class="card-text d-flex" style="color: #0D3B66; margin-bottom: 0.1rem">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/411/411724.png" height="25px"
+                                            width="25px">
+                                        <p class="card-text" style="margin-top: 1.5px; margin-left: 3px;">
+                                            <b>Direkomendasikan oleh {{ $l3->foodBlogger->food_blogger_name }}</b>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                @endforeach
+            @endforeach
+        @endif
+
 
     </div>
 @endsection
