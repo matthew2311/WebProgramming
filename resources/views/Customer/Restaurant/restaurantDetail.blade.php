@@ -15,12 +15,12 @@
                 <div class="row g-0">
                     <div class="col-md-4">
                         <img src="{{ asset($rd->restaurant->restaurant_image) }}"
-                            style="height: 400px !important; width: 400px !important" class="img-fluid rounded-3"
+                            style="height: 420px !important; width: 450px !important" class="img-fluid rounded-3"
                             alt="...">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body" style="color: white">
-                            <h2 class="card-title"><b>{{ $rd->restaurant->restaurant_name }}</b></h2>
+                            <h3 class="card-title"><b>{{ $rd->restaurant->restaurant_name }}</b></h3>
                             <p class="card-text fs-4">
 
                             <h5 class="pb-3"><b>Kategori:</b></h5>

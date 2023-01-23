@@ -38,14 +38,14 @@ Route::get('/foodblogger/detail/{id}', [FoodBloggerController::class, 'foodBlogg
 
 
 //Admin
-Route::get('/admin/login', [adminController::class, 'loginView']);
-Route::post('/admin/login/post', [adminController::class, 'login'])->name('adminLogin');
-Route::get('/admin/logout', [adminController::class, 'logout'])->name('adminLogout');
+Route::get('/admin/login', [AdminController::class, 'loginView']);
+Route::post('/admin/login/post', [AdminController::class, 'login'])->name('adminLogin');
+Route::get('/admin/logout', [AdminController::class, 'logout'])->name('adminLogout');
 Route::middleware('admin')->group(function () {
-    Route::get('/admin/manage/restaurant', [adminController::class, 'manageRestaurant'])->name('manageRestaurant');
-    Route::get('/admin/manage/foodblogger', [adminController::class, 'manageFoodBlogger'])->name('manageFoodBlogger');
-    Route::get('/admin/manage/restaurant/search', [adminController::class, 'searchRestaurant'])->name('searchRestaurant');
-    Route::get('/admin/manage/foodblogger/search', [adminController::class, 'searchFoodBlogger'])->name('searchFoodBlogger');
-    Route::delete('/admin/manage/restaurant/{id}', [adminController::class, 'deleteRestaurant'])->name('deleteRestaurant');
-    Route::delete('/admin/manage/foodblogger/{id}', [adminController::class, 'deleteFoodBlogger'])->name('deleteFoodBlogger');
+    Route::get('/admin/manage/restaurant', [AdminController::class, 'manageRestaurant'])->name('manageRestaurant');
+    Route::get('/admin/manage/foodblogger', [AdminController::class, 'manageFoodBlogger'])->name('manageFoodBlogger');
+    Route::get('/admin/manage/restaurant/search', [AdminController::class, 'searchRestaurant'])->name('searchRestaurant');
+    Route::get('/admin/manage/foodblogger/search', [AdminController::class, 'searchFoodBlogger'])->name('searchFoodBlogger');
+    Route::delete('/admin/manage/restaurant/{id}', [AdminController::class, 'deleteRestaurant'])->name('deleteRestaurant');
+    Route::delete('/admin/manage/foodblogger/{id}', [AdminController::class, 'deleteFoodBlogger'])->name('deleteFoodBlogger');
 });

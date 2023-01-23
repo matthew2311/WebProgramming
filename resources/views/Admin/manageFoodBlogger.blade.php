@@ -6,7 +6,7 @@
 
 @section('body')
 
-<div class="container mt-5">
+<div class="container mt-4">
     <form action="{{route('searchFoodBlogger')}}" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
         <input type="search" class="form-control" name="search_food_blogger_name" placeholder="Cari Food Blogger" aria-label="Search">
     </form>
@@ -14,9 +14,10 @@
     <br>
 
     {{-- ADD PRODUCT blm dihubungkan dengan add page --}}
-    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-        <form action="#" style="background-color: #0C3459; border-radius:25px">
-            <button type="submit" class="btn btn-primary" style="color: #FFFFFF; font-weight:bold"> Tambah Food Blogger </button>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-center" style="margin-bottom: 1.25rem !important">
+        <form action="#" style="border-radius:25px">
+            <button type="submit" class="btn" style="color: #FFFFFF; font-weight:bold; background-color: #0C3459">
+                Tambah Food Blogger </button>
         </form>
     </div>
 

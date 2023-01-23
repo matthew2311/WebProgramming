@@ -12642,11 +12642,12 @@ fieldset:disabled .btn {
         display: none !important;
     }
 
-    .admin {
-        background-color: #CCD2E3
-    }
+}
 
-    .generalUser {
-        background-color: white;
-    }
+.admin {
+    background-color: #CCD2E3;
+}
+
+.generalUser {
+    background-color: white;
 }

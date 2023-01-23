@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     --}}
 
-    <title>@yield('title')</title>
+    <title>Evoba | Login</title>
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -57,46 +57,48 @@
         </div>
     </header>
 
-    <div class="col-md-3 container d-flex flex-wrap justify-content-center mt-5">
-        @if ($errors->any())
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                {{$errors->first()}}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        @endif
-        <main class="form-signin w-100 m-auto">
-            <form action={{route('adminLogin')}} method="POST" class="flex-wrap">
-                @csrf
-                <a class="navbar-brand px-2 d-flex justify-content-center text-center" href="/"><h1>Evoba</h1></a>
-                <h1 class="h3 mb-3 fw-normal d-flex justify-content-center text-center">Log In with Admin Account</h1>
-
-                <div class="form-floating">
-                    <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email" value="{{Cookie::get('userEmail') !==  null ? Cookie::get('userEmail') : ''}}">
-                    <label for="floatingInput">Email address</label>
+    <main style="background-color: #CCD2E3; padding-bottom: 3rem">
+        <div class="col-md-3 container d-flex flex-wrap justify-content-center mt-5">
+            @if ($errors->any())
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{$errors->first()}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
-                <div class="form-floating">
-                    <input type="password" class="form-control" id="password" placeholder="Password" name="password">
-                    <label for="floatingPassword">Password</label>
-                </div>
+            @endif
+            <main class="form-signin w-100 m-auto">
+                <form action={{route('adminLogin')}} method="POST" class="flex-wrap">
+                    @csrf
+                    <a class="navbar-brand px-2 d-flex justify-content-center text-center" href="/"><h1>Evoba</h1></a>
+                    <h1 class="h3 mb-3 fw-normal d-flex justify-content-center text-center">Log In with Admin Account</h1>
 
-                <div class="checkbox mb-3">
-                    <label>
-                        <input type="checkbox" value="remember-me" name="remember"> Remember me
-                    </label>
-                </div>
+                    <div class="form-floating">
+                        <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email" value="{{Cookie::get('userEmail') !==  null ? Cookie::get('userEmail') : ''}}">
+                        <label for="floatingInput">Email address</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+                        <label for="floatingPassword">Password</label>
+                    </div>
 
-                {{-- @if ($errors->any())
-                    <p class="text-danger">{{$errors->first()}}</p>
-                @endif --}}
+                    <div class="checkbox mb-3">
+                        <label>
+                            <input type="checkbox" value="remember-me" name="remember"> Remember me
+                        </label>
+                    </div>
 
-                <button class="w-100 btn btn-lg btn-primary" type="submit">Log in</button>
-            </form>
-          </main>
-    </div>
+                    {{-- @if ($errors->any())
+                        <p class="text-danger">{{$errors->first()}}</p>
+                    @endif --}}
+
+                    <button class="w-100 btn btn-lg btn-primary" type="submit">Log in</button>
+                </form>
+              </main>
+        </div>
+    </main>
 
     <div class="container">
 
-        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top">
             <div class="col-md-4 d-flex align-items-center ms-3">
                 <span class="mb-3 mb-md-0 text-muted">© Evoba Inc</span>
             </div>

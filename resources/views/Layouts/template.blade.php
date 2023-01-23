@@ -31,7 +31,7 @@
     <title>@yield('title')</title>
 </head>
 
-<body class="d-flex flex-column min-vh-100 {{ request()->is('admin/login') ? 'admin' : 'generalUser' }}">
+<body class="d-flex flex-column min-vh-100">
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
         <symbol id="facebook" viewBox="0 0 16 16">
             <path
@@ -105,8 +105,8 @@
                             {{ Auth::user()->name }}
                         </a>
                         <ul class="navbar-brand dropdown-menu aria-labelledby text-decoration-none p-1">
-                            <li><a class="dropdown-item rounded-2 text-navbar"
-                                    href="{{ route('adminLogout') }}"><i class="bi bi-box-arrow-left"></i>Logout</a></li>
+                            <li><a class="dropdown-item rounded-2 text-navbar" href="{{ route('adminLogout') }}"><i
+                                        class="bi bi-box-arrow-left"></i>Logout</a></li>
                         </ul>
                     </li>
                 @endif
@@ -114,12 +114,14 @@
         </div>
     </header>
 
-    @yield('body')
+    <div class="{{ request()->is('admin/*') ? 'admin' : 'generalUser' }}">
+        @yield('body')
+    </div>
 
     <div class="container">
 
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-            <div class="col-md-4 d-flex align-items-center ms-3" >
+            <div class="col-md-4 d-flex align-items-center ms-3">
                 <span class="mb-3 mb-md-0 text-muted" style="color: #FFFFFF;">© Evoba Inc</span>
             </div>
 
@@ -132,8 +134,8 @@
                             height="24">
                             <use xlink:href="#instagram"></use>
                         </svg></a></li>
-                <li class="ms-3"><a class="text-muted" style="color:red !important" href="#"><svg
-                            class="bi" width="24" height="24">
+                <li class="ms-3"><a class="text-muted" style="color:red !important" href="#"><svg class="bi"
+                            width="24" height="24">
                             <use xlink:href="#facebook"></use>
                         </svg></a></li>
             </ul>
