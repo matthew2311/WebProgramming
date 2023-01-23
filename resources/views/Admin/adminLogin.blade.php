@@ -53,68 +53,46 @@
                 <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
                     <span class="fs-4" style="color: #0D3B66 !important; font-weight:bolder">Evoba</span>
                 </a>
-
-                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 ms-4">
-                    <li><a href="{{ route('foodBloggerIndex') }}" class="nav-link px-2 text-navbar">Food Bloggers</a>
-                    </li>
-                    <li><a href="{{ route('restaurantLocationView') }}" class="nav-link px-2 text-navbar">Lokasi</a>
-                    </li>
-                    <li class="nav-link px-2 text-navbar dropdown">
-                        <a class="navbar-brand dropdown-toggle text-decoration-none" href="/"
-                            data-bs-toggle="dropdown">
-                            Kategori
-                        </a>
-                        <ul class="navbar-brand dropdown-menu aria-labelledby text-decoration-none p-1">
-                            <li><a class="dropdown-item rounded-2 text-navbar"
-                                    href="{{ route('categoryIndex', ['id' => 1]) }}">Indonesian Food</a></li>
-                            <li><a class="dropdown-item rounded-2 text-navbar"
-                                    href="{{ route('categoryIndex', ['id' => 2]) }}">Chinese Food</a></li>
-                            <li><a class="dropdown-item rounded-2 text-navbar"
-                                    href="{{ route('categoryIndex', ['id' => 3]) }}">Japanese Food</a></li>
-                            <li><a class="dropdown-item rounded-2 text-navbar"
-                                    href="{{ route('categoryIndex', ['id' => 4]) }}">Western Food</a></li>
-                            <li><a class="dropdown-item rounded-2 text-navbar"
-                                    href="{{ route('categoryIndex', ['id' => 5]) }}">Italian Food</a></li>
-                            <li><a class="dropdown-item rounded-2 text-navbar"
-                                    href="{{ route('categoryIndex', ['id' => 6]) }}">Dessert</a></li>
-                        </ul>
-                    </li>
-
-                    {{-- Kalau admin log in maka muncul menu ini --}}
-                    @if (Auth::check())
-                        <li class="nav-link px-2 text-navbar dropdown">
-                            <a class="navbar-brand dropdown-toggle text-decoration-none" href="/"
-                                data-bs-toggle="dropdown">
-                                Kelola Website
-                            </a>
-                            <ul class="navbar-brand dropdown-menu aria-labelledby text-decoration-none p-1">
-                                <li><a class="dropdown-item rounded-2 text-navbar"
-                                        href="{{ route('manageRestaurant') }}">Kelola Restoran</a></li>
-                                <li><a class="dropdown-item rounded-2 text-navbar"
-                                        href="{{ route('manageFoodBlogger') }}">Kelola Food Bloggers</a></li>
-                            </ul>
-                        </li>
-                    @endif
-                </ul>
-
-                {{-- Kalau admin log in maka muncul menu ini --}}
-                @if (Auth::check())
-                    <li class="nav-link px-2 text-navbar dropdown">
-                        <a class="navbar-brand dropdown-toggle text-decoration-none" href="/"
-                            data-bs-toggle="dropdown">
-                            {{ Auth::user()->name }}
-                        </a>
-                        <ul class="navbar-brand dropdown-menu aria-labelledby text-decoration-none p-1">
-                            <li><a class="dropdown-item rounded-2 text-navbar"
-                                    href="{{ route('adminLogout') }}"><i class="bi bi-box-arrow-left"></i> Sign out</a></li>
-                        </ul>
-                    </li>
-                @endif
             </div>
         </div>
     </header>
 
-    @yield('body')
+    <div class="col-md-3 container d-flex flex-wrap justify-content-center mt-5">
+        @if ($errors->any())
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{$errors->first()}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+        <main class="form-signin w-100 m-auto">
+            <form action={{route('adminLogin')}} method="POST" class="flex-wrap">
+                @csrf
+                <a class="navbar-brand px-2 d-flex justify-content-center text-center" href="/"><h1>Evoba</h1></a>
+                <h1 class="h3 mb-3 fw-normal d-flex justify-content-center text-center">Log In with Admin Account</h1>
+
+                <div class="form-floating">
+                    <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email" value="{{Cookie::get('userEmail') !==  null ? Cookie::get('userEmail') : ''}}">
+                    <label for="floatingInput">Email address</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+                    <label for="floatingPassword">Password</label>
+                </div>
+
+                <div class="checkbox mb-3">
+                    <label>
+                        <input type="checkbox" value="remember-me" name="remember"> Remember me
+                    </label>
+                </div>
+
+                {{-- @if ($errors->any())
+                    <p class="text-danger">{{$errors->first()}}</p>
+                @endif --}}
+
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Log in</button>
+            </form>
+          </main>
+    </div>
 
     <div class="container">
 
@@ -132,8 +110,8 @@
                             height="24">
                             <use xlink:href="#instagram"></use>
                         </svg></a></li>
-                <li class="ms-3"><a class="text-muted" style="color:red !important" href="#"><svg
-                            class="bi" width="24" height="24">
+                <li class="ms-3"><a class="text-muted" style="color:red !important" href="#"><svg class="bi"
+                            width="24" height="24">
                             <use xlink:href="#facebook"></use>
                         </svg></a></li>
             </ul>

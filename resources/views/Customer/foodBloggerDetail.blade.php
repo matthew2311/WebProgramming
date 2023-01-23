@@ -39,6 +39,7 @@
                 <h2>Maaf, Belum Ada Restoran yang Bisa Ditampilkan untuk Saat Ini. Terima Kasih.</h2>
             @else
                 <div class="row pt-1">
+                    <h2>Restoran yang direkomendasikan:</h2>
                     @foreach ($foodBloggerRec as $fcr)
                         <div class="card mx-2 mt-2 mb-4 px-0" style="width: 15rem;">
                             <a href="{{ route('restaurantDetail', ['id' => $fcr->restaurant_id]) }}"><img

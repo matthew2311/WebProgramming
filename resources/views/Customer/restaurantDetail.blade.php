@@ -63,6 +63,7 @@
                     </div>
                 </div>
 
+                {{-- Cuma muncul kalo gak sign in sebagai admin --}}
                 {{-- Bakal nampilin button kalo ada linknya, kalo NULL gak muncul buttonnya --}}
                 @if ($rd->restaurant->restaurant_whatsapp_link != null)
                     <a href="{{ $rd->restaurant->restaurant_whatsapp_link }}" target="_blank" class="btn btn-success"><i

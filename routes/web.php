@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\adminController;
 use App\Http\Controllers\foodBloggerController;
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\restaurantController;
+use App\Http\Middleware\AuthCheck;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,3 +39,14 @@ Route::get('/foodblogger/all', [FoodBloggerController::class, 'foodBloggerIndex'
 Route::get('/foodblogger/detail/{id}', [FoodBloggerController::class, 'foodBloggerDetail'])->name('foodBloggerDetail');
 
 Route::get('/search', [HomeController::class, 'search'])->name('search');
+
+//Admin
+Route::get('/admin/login', [adminController::class, 'loginView']);
+Route::post('/admin/login/post', [adminController::class, 'login'])->name('adminLogin');
+Route::get('/admin/logout', [adminController::class, 'logout'])->name('adminLogout');
+Route::get('/admin/manage/restaurant', [adminController::class, 'manageRestaurant'])->name('manageRestaurant')->middleware([AuthCheck::class]);
+Route::get('/admin/manage/foodblogger', [adminController::class, 'manageFoodBlogger'])->name('manageFoodBlogger')->middleware([AuthCheck::class]);
+Route::get('/admin/manage/restaurant/search', [adminController::class, 'searchRestaurant'])->name('searchRestaurant')->middleware([AuthCheck::class]);
+Route::get('/admin/manage/foodblogger/search', [adminController::class, 'searchFoodBlogger'])->name('searchFoodBlogger')->middleware([AuthCheck::class]);
+Route::delete('/admin/manage/restaurant/{id}', [adminController::class, 'deleteRestaurant'])->name('deleteRestaurant')->middleware([AuthCheck::class]);
+Route::delete('/admin/manage/foodblogger/{id}', [adminController::class, 'deleteFoodBlogger'])->name('deleteFoodBlogger')->middleware([AuthCheck::class]);
