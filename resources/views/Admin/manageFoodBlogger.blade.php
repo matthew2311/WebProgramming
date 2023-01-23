@@ -23,8 +23,8 @@
     @foreach ( $foodBloggers as $fb )
     <div class="card mx-auto my-auto mt-2" style="max-width: 540px;">
         <div class="row no-gutters">
-            <div class="col-md-3 mx-auto my-auto ">
-                <img src="{{asset($fb->food_blogger_image)}}" class="card-img" alt="{{ $fb->food_blogger_name }}">
+            <div class="col-md-3 mx-auto my-auto">
+                <img src="{{asset($fb->food_blogger_image)}}" class="card-img" alt="{{ $fb->food_blogger_name }}" style="height: 100px">
             </div>
             <div class="col-lg-8">
                 <div class="card-body">
@@ -39,8 +39,7 @@
                         </form>
 
                         {{-- DELETE --}}
-                        {{-- blm dihubungkan dengan remove page --}}
-                        <form action="#" style="background-color: #FF0000; border-radius: 25px" method="POST">
+                        <form action="{{ route('deleteFoodBlogger', ['id'=> $fb->id]) }}" style="background-color: #FF0000; border-radius: 25px" method="POST">
                             @method('delete')
                             @csrf
                             <button class="btn btn-danger" type="submit" style="color: #FFFFFF; font-weight:bold">
