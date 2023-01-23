@@ -11,10 +11,8 @@ class FoodBloggerController extends Controller
 {
     public function foodBloggerIndex()
     {
-        $foodBlogger = FoodBlogger::all()->sortBy('food_blogger_name');
+        $foodBloggers = FoodBlogger::orderBy('food_blogger_name')->paginate(9)->withQueryString();
         $recommend = RecommendedBy::all()->groupBy('food_blogger_id');
-
-        $foodBloggers = new LengthAwarePaginator($foodBlogger, count($foodBlogger), 9, 1);
 
         foreach ($recommend as $r) {
             $recommendationTotal = 0;
