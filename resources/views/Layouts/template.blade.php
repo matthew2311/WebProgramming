@@ -106,7 +106,7 @@
                         </a>
                         <ul class="navbar-brand dropdown-menu aria-labelledby text-decoration-none p-1">
                             <li><a class="dropdown-item rounded-2 text-navbar"
-                                    href="{{ route('adminLogout') }}"><i class="bi bi-box-arrow-left"></i> Sign out</a></li>
+                                    href="{{ route('adminLogout') }}"><i class="bi bi-box-arrow-left"></i>Logout</a></li>
                         </ul>
                     </li>
                 @endif
