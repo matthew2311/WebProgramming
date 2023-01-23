@@ -31,15 +31,8 @@ class RestaurantController extends Controller
     }
 
     public function restaurantLocationView(){
-        // $restaurantLoc = Restaurant::all()->groupBy('restaurant_city');
-
-        // foreach($restaurantLoc as $r){
-        //     $total = 0;
-        //     foreach($r as $r1){
-        //         $total += 1;
-        //     }
-        //     $r->total = $total;
-        // }
+        // $loc1 = ;
+        // $loc2 = ;
 
         return view('Customer.location');
     }

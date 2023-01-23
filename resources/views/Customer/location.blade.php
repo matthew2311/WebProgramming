@@ -98,6 +98,10 @@
             </a>
         </div>
 
+        <h2 style="color: #0D3B66; font-weight: bold">Restoran di Jakarta Utara</h2>
+
+
+        <h2 style="color: #0D3B66; font-weight: bold">Restoran di Jakarta Pusat</h2>
 
     </div>
 @endsection
