@@ -52,6 +52,10 @@
         </div>
     </div>
     @endforeach
+    <br>
+    <div class="justify-content-center d-flex">
+        {{ $restaurants->links() }}
+    </div>
 </div>
 
 @endsection
