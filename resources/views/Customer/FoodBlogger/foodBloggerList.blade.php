@@ -21,7 +21,8 @@
                                 <div class="card home br-2" style="width: 100%">
                                     <img class="card-img-top" src="{{ asset($fb->food_blogger_image) }}" height="250px">
                                     <div class="card-body" style="background-color: #EAEAEA">
-                                        <h5 class="card-title" style="color: #0D3B66"><b>{{ $fb->food_blogger_name }}</b></h5>
+                                        <h5 class="card-title" style="color: #0D3B66"><b>{{ $fb->food_blogger_name }}</b>
+                                        </h5>
                                         @foreach ($recommend as $r)
                                             @if ($r->foodBloggerID == $fb->id)
                                                 <p class="card-text" style="color: #0D3B66">{{ $r->recommendationTotal }}
@@ -32,25 +33,12 @@
                                 </div>
                             </a>
                         </div>
-                        {{-- <div class="card mx-2 mt-2 mb-4 px-0" style="width: 15rem;">
-                            <a href="{{ route('foodBloggerDetail', ['id' => $fb->id]) }}"><img
-                                    src="{{ $fb->food_blogger_image }}" class="card-img-top" width="100px"
-                                    height="250px"></a>
-                            <div class="card-body">
-                                <h5 class="card-title" style="color: #0D3B66">{{ $fb->food_blogger_name }}</h5>
-                                @foreach ($recommend as $r)
-                                    @if ($r->foodBloggerID == $fb->id)
-                                        <p class="card-text" style="color: #0D3B66">{{ $r->recommendationTotal }}
-                                            rekomendasi</p>
-                                    @break
-                                @endif
-                            @endforeach
-                        </div>
-                        <a href="{{ route('foodBloggerDetail', ['id' => $fb->id]) }}"
-                            class="btn btn-outline-primary btn-block flex-wrap d-flex justify-content-center">Detail
-                            Food Blogger</a> --}}
                     @endforeach
             @endif
         </div>
+
+    </div>
+    <div class="justify-content-center d-flex">
+        {{ $foodBloggers->links() }}
     </div>
 @endsection

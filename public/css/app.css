@@ -12641,4 +12641,12 @@ fieldset:disabled .btn {
     .d-print-none {
         display: none !important;
     }
+
+    .admin {
+        background-color: #CCD2E3
+    }
+
+    .generalUser {
+        background-color: white;
+    }
 }

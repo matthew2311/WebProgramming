@@ -31,7 +31,7 @@
     <title>@yield('title')</title>
 </head>
 
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100 {{ request()->is('admin/login') ? 'admin' : 'generalUser' }}">
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
         <symbol id="facebook" viewBox="0 0 16 16">
             <path
@@ -119,8 +119,8 @@
     <div class="container">
 
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-            <div class="col-md-4 d-flex align-items-center ms-3">
-                <span class="mb-3 mb-md-0 text-muted">© Evoba Inc</span>
+            <div class="col-md-4 d-flex align-items-center ms-3" >
+                <span class="mb-3 mb-md-0 text-muted" style="color: #FFFFFF;">© Evoba Inc</span>
             </div>
 
             <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
