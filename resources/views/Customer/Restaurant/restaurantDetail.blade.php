@@ -6,86 +6,56 @@
 
 @section('body')
     <div class="container">
+        <div class="mt-4">
+            <h2 style="color: #0D3B66"><b>Detail Food</b></h2>
+        </div>
         {{-- <h3 class="mt-5 ml-3">{{$restaurant_detail->restaurant_name}}</h3> --}}
         @foreach ($restaurant_detail as $rd)
-            <div class="card mx-auto my-auto mt-5" style="width: 1000px; background-color: #EF8354">
-                <div class="row no-gutters">
-                    <div class="col-md-3 mx-auto my-auto">
-                        <img src="{{ asset($rd->restaurant->restaurant_image) }}" class="card-img" alt="">
+            <div class="card mx-auto my-auto mt-3 p-3" style="width: 1000px; background-color: #EF8354">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="{{ asset($rd->restaurant->restaurant_image) }}"
+                            style="height: 400px !important; width: 400px !important" class="img-fluid rounded-3"
+                            alt="...">
                     </div>
                     <div class="col-md-8">
-                        <div class="card-body text-white">
-                            <h5 class="card-title">{{ $rd->restaurant->restaurant_name }}</h5>
-                            <div class="card-text">
-                                Kategori: {{ $rd->restaurant->category->category_name }}
-                            </div>
-                            <br>
-                            <div class="card-text">
-                                Alamat:
-                                <br>
-                                {{ $rd->restaurant->restaurant_address }}
-                            </div>
-                            <br>
-                            <div class="card-text">
-                                {{-- Cek yang rekomendasiin ada berapa orang --}}
-                                @if (count($restaurant_detail) < 2)
-                                    {{-- cuma satu yang rekomendasiin restorannya --}}
-                                    @foreach ($restaurant_detail as $rd1)
-                                        Direkomendasikan oleh: {{ $rd1->foodBlogger->food_blogger_name }}
-                                        <br>
-                                    @endforeach
-                                @else
-                                    {{-- lebih dari satu yang rekomendasiin restorannya --}}
-                                    Direkomendasikan oleh:
-                                    <br>
-                                    @foreach ($restaurant_detail as $rd1)
-                                        - {{ $rd1->foodBlogger->food_blogger_name }}
-                                        <br>
-                                    @endforeach
+                        <div class="card-body" style="color: white">
+                            <h2 class="card-title"><b>{{ $rd->restaurant->restaurant_name }}</b></h2>
+                            <p class="card-text fs-4">
+
+                            <h5 class="pb-3"><b>Kategori:</b></h5>
+                            {{ $rd->restaurant->category->category_name }}
+                            <hr>
+
+                            <h5 class="pb-3"><b>Alamat:</b></h5>
+                            {{ $rd->restaurant->restaurant_address }}
+                            <hr>
+                            <div>
+                                @if ($rd->restaurant->restaurant_instagram_link != null)
+                                    <a href="{{ $rd->restaurant->restaurant_instagram_link }}" target="_blank"
+                                        style="color:#EF8354; margin-right: 3px">
+                                        <img src="https://www.svgrepo.com/show/452229/instagram-1.svg" width="35px"
+                                            height="35px" style="margin-top: 5px; margin-bottom: 10px">
+                                    </a>
                                 @endif
-
+                                @if ($rd->restaurant->restaurant_gofood != null)
+                                    <a href="{{ $rd->restaurant->restaurant_gofood }}" target="_blank"
+                                        style="color:#EF8354; margin-right: 3px">
+                                        <img src="https://www.svgrepo.com/show/349382/gojek.svg" width="35px"
+                                            height="35px" style="margin-top: 5px; margin-bottom: 10px">
+                                    </a>
+                                @endif
+                                <br>
                             </div>
-                            <br>
-
-                            {{-- Ini mau pake Opening Hour sama Price?? Kalo mau berarti tambahin di DB sama Seeder --}}
-                            {{-- <div class="card-text">
-                            Opening Hours:
-                            <br>
-                            Monday - Wednesday (12.00 - 15.00, 17.00 - 23.00)
-                            <br>
-                            Thursday - Sunday (12.00 - 15.00, 17.00 - 02.00)
-                        </div>
-                        <br>
-                        <div class="card-text">
-                            Price Range: Di atas Rp200.000,-/orang
-                        </div> --}}
+                            @if ($rd->restaurant->restaurant_whatsapp_link != null)
+                                <a href="{{ $rd->restaurant->restaurant_whatsapp_link }}" target="_blank"
+                                    class="btn btn-success"><i class="bi bi-whatsapp"></i><b>Book Now via WhatsApp</b></a>
+                            @endif
+                            </p>
                         </div>
                     </div>
                 </div>
-
-                {{-- Bakal nampilin button kalo ada linknya, kalo NULL gak muncul buttonnya --}}
-                @if ($rd->restaurant->restaurant_whatsapp_link != null)
-                    <a href="{{ $rd->restaurant->restaurant_whatsapp_link }}" target="_blank" class="btn btn-success"><i
-                            class="bi bi-whatsapp"></i> WhatsApp</a>
-                @endif
-                @if ($rd->restaurant->restaurant_instagram_link != null)
-                    <a href="{{ $rd->restaurant->restaurant_instagram_link }}" target="_blank" class="btn btn-light"><i
-                            class="bi bi-instagram"></i> Instagram</a>
-                @endif
-                @if ($rd->restaurant->restaurant_tiktok_link != null)
-                    <a href="{{ $rd->restaurant->restaurant_tiktok_link }}" target="_blank" class="btn btn-dark"><i
-                            class="bi bi-tiktok"></i> TikTok</a>
-                @endif
-                @if ($rd->restaurant->restaurant_gofood != null)
-                    <a href="{{ $rd->restaurant->restaurant_gofood }}" target="_blank" class="btn btn-success">GoFood</a>
-                @endif
-                @if ($rd->restaurant_grabfood != null)
-                    <a href="{{ $rd->restaurant->restaurant_grabfood }}" target="_blank" class="btn btn-success">Grab
-                        Food</a>
-                @endif
-
             </div>
-        @break
-    @endforeach
-</div>
+        @endforeach
+    </div>
 @endsection
