@@ -53,15 +53,16 @@ class adminController extends Controller
     }
 
     public function deleteRestaurant(Request $request){
-        Restaurant::where('id', $request->id)->delete();
         RecommendedBy::where('restaurant_id', $request->id)->delete();
+        Restaurant::where('id', $request->id)->delete();
 
         return redirect()->route('manageRestaurant');
     }
 
     public function deleteFoodBlogger(Request $request){
-        FoodBlogger::where('id', $request->id)->delete();
         RecommendedBy::where('food_blogger_id', $request->id)->delete();
+        FoodBlogger::where('id', $request->id)->delete();
+
 
         return redirect()->route('manageFoodBlogger');
     }
