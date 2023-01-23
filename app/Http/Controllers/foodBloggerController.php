@@ -4,14 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Models\FoodBlogger;
 use App\Models\RecommendedBy;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Http\Request;
 
 class FoodBloggerController extends Controller
 {
     public function foodBloggerIndex()
     {
-        $foodBloggers = FoodBlogger::all()->sortBy('food_blogger_name');
+        $foodBlogger = FoodBlogger::all()->sortBy('food_blogger_name');
         $recommend = RecommendedBy::all()->groupBy('food_blogger_id');
+
+        $foodBloggers = new LengthAwarePaginator($foodBlogger, count($foodBlogger), 9, 1);
 
         foreach ($recommend as $r) {
             $recommendationTotal = 0;

@@ -38,9 +38,9 @@ class RestaurantController extends Controller
     }
 
     public function restaurantLocationView(){
-        $loc1_filter = Restaurant::where('restaurant_city', 'Jakarta Utara')->get()->random(2);
+        $loc1_filter = Restaurant::where('restaurant_city', 'Jakarta Utara')->get()->random(3);
         $loc2_filter = Restaurant::where('restaurant_city', 'Jakarta Pusat')->get()->random(2);
-        $loc3_filter = Restaurant::where('restaurant_city', 'Jakarta Barat')->get()->random(2);
+        $loc3_filter = Restaurant::where('restaurant_city', 'Jakarta Barat')->get()->random(3);
 
         $loc1 = [];
         foreach($loc1_filter as $lf){
