@@ -65,10 +65,19 @@ class RestaurantController extends Controller
 
     public function restaurantLocation(Request $request){
         $location = Str::replace('-', ' ', $request->loc);
-        $resto = Restaurant::where('restaurant_city', Str::replace('-', ' ', $request->loc))->first();
         $restaurantLoc = Restaurant::where('restaurant_city', Str::replace('-', ' ', $request->loc))->paginate(9)->withQueryString();
 
-        $loc = $resto->restaurant_city;
+        if($request->loc == "jakarta-utara"){
+            $loc = "Jakarta Utara";
+        }else if($request->loc == "jakarta-barat"){
+            $loc = "Jakarta Barat";
+        }else if($request->loc == "jakarta-selatan"){
+            $loc = "Jakarta Selatan";
+        }else if($request->loc == "jakarta-timur"){
+            $loc = "Jakarta Timur";
+        }else if($request->loc == "jakarta-pusat"){
+            $loc = "Jakarta Pusat";
+        }
 
         return view('Customer.Restaurant.recommendationByLocation', compact('restaurantLoc', 'loc'));
     }
