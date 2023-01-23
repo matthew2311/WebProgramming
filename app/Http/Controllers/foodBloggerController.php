@@ -27,7 +27,7 @@ class FoodBloggerController extends Controller
             $r->foodBloggerID = $foodBloggerID;
         }
 
-        return view('Customer.foodBloggerList', compact('foodBloggers', 'recommend'));
+        return view('Customer.FoodBlogger.foodBloggerList', compact('foodBloggers', 'recommend'));
     }
 
     public function foodBloggerDetail(Request $request)
@@ -35,6 +35,6 @@ class FoodBloggerController extends Controller
         $foodBlogger = FoodBlogger::where('id', $request->id)->first();
         $foodBloggerRec = RecommendedBy::where('food_blogger_id', $request->id)->get();
 
-        return view('Customer.foodBloggerDetail', compact('foodBlogger', 'foodBloggerRec'));
+        return view('Customer.FoodBlogger.foodBloggerDetail', compact('foodBlogger', 'foodBloggerRec'));
     }
 }

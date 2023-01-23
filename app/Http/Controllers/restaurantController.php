@@ -11,15 +11,15 @@ use Illuminate\Support\Str;
 class RestaurantController extends Controller
 {
     public function restaurantIndex(){
-        $restaurants = RecommendedBy::paginate(10)->withQueryString();
+        $restaurants = RecommendedBy::paginate(9)->withQueryString();
 
-        return view('Customer.restaurantRecommendation', compact('restaurants'));
+        return view('Customer.Restaurant.restaurantRecommendation', compact('restaurants'));
     }
 
     public function restaurantDetail(Request $request){
         $restaurant_detail = RecommendedBy::where('restaurant_id', $request->id)->get();
 
-        return view('Customer.restaurantDetail', compact('restaurant_detail'));
+        return view('Customer.Restaurant.restaurantDetail', compact('restaurant_detail'));
     }
 
     public function categoryIndex(Request $request){
@@ -27,7 +27,7 @@ class RestaurantController extends Controller
 
         $categoryName = Category::where('id', $request->id)->first();
 
-        return view('Customer.categoryDetail', compact('restaurantCategory', 'categoryName'));
+        return view('Customer.Restaurant.categoryDetail', compact('restaurantCategory', 'categoryName'));
     }
 
     public function restaurantLocationView(){
@@ -41,7 +41,7 @@ class RestaurantController extends Controller
         //     $r->total = $total;
         // }
 
-        return view('Customer.location');
+        return view('Customer.Restaurant.location');
     }
 
     public function restaurantLocation(Request $request){
@@ -51,6 +51,6 @@ class RestaurantController extends Controller
 
         $loc = $resto->restaurant_city;
 
-        return view('Customer.recommendationByLocation', compact('restaurantLoc', 'loc'));
+        return view('Customer.Restaurant.recommendationByLocation', compact('restaurantLoc', 'loc'));
     }
 }

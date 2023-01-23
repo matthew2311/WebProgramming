@@ -14,7 +14,7 @@ class HomeController extends Controller
     public function search(Request $request){
         $search_food_blogger_name = $request->search_food_blogger_name;
 
-        $search_results = FoodBlogger::where('food_blogger_name', 'LIKE', "%$search_food_blogger_name%")->paginate(10)->withQueryString();
+        $search_results = FoodBlogger::where('food_blogger_name', 'LIKE', "%$search_food_blogger_name%")->paginate(9)->withQueryString();
 
         return view('Customer.searchResult', compact('search_results'));
     }
