@@ -12,39 +12,39 @@
         </form>
         <form>
             <div class="form-group">
-                <label>name</label>
+                <label>name</label><br>
                 <input type="" class="form-control" id="">
             </div>
             <div class="form-group">
-                <label>Restaurant Address</label>
+                <label>Restaurant Address</label><br>
                 <textarea class="form-control" id="" rows="3"></textarea>
             </div>
             <div class="form-group">
-                <label>Google Maps</label>
+                <label>Google Maps</label><br>
                 <input type="" class="form-control" id="">
             </div>
             <div class="form-group">
-                <label>WhatsApp Link</label>
+                <label>WhatsApp Link</label><br>
                 <input type="" class="form-control" id="">
             </div>
             <div class="form-group">
-                <label>Instagram Link</label>
+                <label>Instagram Link</label><br>
                 <input type="" class="form-control" id="">
             </div>
             <div class="form-group">
-                <label>Tiktok Link</label>
+                <label>Tiktok Link</label><br>
                 <input type="" class="form-control" id="">
             </div>
             <div class="form-group">
-                <label>GoFood Link</label>
+                <label>GoFood Link</label><br>
                 <input type="" class="form-control" id="">
             </div>
             <div class="form-group">
-                <label>GrabFood Link</label>
+                <label>GrabFood Link</label><br>
                 <input type="" class="form-control" id="">
             </div>
             <div class="form-group">
-                <label>Photo</label>
+                <label>Photo</label><br>
                 <input type="file" class="form-control-file" id="">
             </div>
             <br>

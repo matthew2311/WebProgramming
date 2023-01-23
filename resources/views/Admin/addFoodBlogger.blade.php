@@ -13,27 +13,27 @@
     </div>
     <form>
         <div class="form-group">
-            <label>name</label>
+            <label>name</label><br>
             <input type="" class="form-control" id="">
         </div>
         <div class="form-group">
-            <label>Description</label>
+            <label>Description</label><br>
             <textarea class="form-control" id="" rows="5"></textarea>
         </div>
         <div class="form-group">
-            <label>Instagram Link</label>
+            <label>Instagram Link</label><br>
             <input type="" class="form-control" id="">
         </div>
         <div class="form-group">
-            <label>Tiktok Link</label>
+            <label>Tiktok Link</label><br>
             <input type="" class="form-control" id="">
         </div>
         <div class="form-group">
-            <label>Youtube Link</label>
+            <label>Youtube Link</label><br>
             <input type="" class="form-control" id="">
         </div>
         <div class="form-group">
-            <label>Photo</label>
+            <label>Photo</label><br>
             <input type="file" class="form-control-file" id="">
         </div>
         <br>
