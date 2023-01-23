@@ -19,7 +19,7 @@
                         <div class="col-sm-4 mb-4">
                             <a href="{{ route('foodBloggerDetail', ['id' => $fb->id]) }}" style="text-decoration: none">
                                 <div class="card home br-2" style="width: 400px">
-                                    <img class="card-img-top" src="{{ $fb->food_blogger_image }}" height="250px">
+                                    <img class="card-img-top" src="{{ asset($fb->food_blogger_image) }}" height="250px">
                                     <div class="card-body" style="background-color: #EAEAEA">
                                         <h5 class="card-title" style="color: #0D3B66"><b>{{ $fb->food_blogger_name }}</b></h5>
                                         @foreach ($recommend as $r)

@@ -19,7 +19,7 @@
                     @foreach ($restaurantCategory as $rc)
                         <div class="card mx-2 mt-2 mb-4 px-0" style="width: 15rem;">
                             <a href="{{ route('restaurantDetail', ['id' => $rc->id]) }}"><img
-                                    src="{{ $rc->restaurant_image }}" class="card-img-top" width="100px" height="250px"></a>
+                                    src="{{ asset($rc->restaurant_image) }}" class="card-img-top" width="100px" height="250px"></a>
                             <div class="card-body">
                                 <h5 class="card-title" style="color: #0D3B66">{{ Str::limit($rc->restaurant_name, 15) }}
                                 </h5>

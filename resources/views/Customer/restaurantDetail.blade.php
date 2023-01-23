@@ -11,7 +11,7 @@
             <div class="card mx-auto my-auto mt-5" style="width: 1000px; background-color: #EF8354">
                 <div class="row no-gutters">
                     <div class="col-md-3 mx-auto my-auto">
-                        <img src="{{ $rd->restaurant->restaurant_image }}" class="card-img" alt="">
+                        <img src="{{ asset($rd->restaurant->restaurant_image) }}" class="card-img" alt="">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body text-white">

@@ -22,7 +22,7 @@ class FoodBloggerSeeder extends Seeder
                 "food_blogger_ig_link" => "https://www.instagram.com/nexcarlos/",
                 "food_blogger_tiktok_link" => "https://www.tiktok.com/@nex.carlos",
                 "food_blogger_youtube_link" => "https://www.youtube.com/@NexCarlos",
-                "food_blogger_image" => "https://media.matamata.com/thumbs/2022/01/24/66731-profil-nex-carlos-instagramnexcarlos/745x489-img-66731-profil-nex-carlos-instagramnexcarlos.jpg",
+                "food_blogger_image" => "storage/images/foodblogger/NexCarlos.jpg",
             ],
             [
                 "id" => 2,
@@ -31,7 +31,7 @@ class FoodBloggerSeeder extends Seeder
                 "food_blogger_ig_link" => "https://www.instagram.com/kenandgrat/",
                 "food_blogger_tiktok_link" => "https://www.tiktok.com/@kenandgratt",
                 "food_blogger_youtube_link" => "https://www.youtube.com/@Kenandgrat",
-                "food_blogger_image" => "https://images.bisnis.com/posts/2020/07/02/1260641/img-20200702-wa0027_copy_800x618.jpg",
+                "food_blogger_image" => "storage/images/foodblogger/Ken_Grat.jpg",
             ],
             [
                 "id" => 3,
@@ -40,7 +40,7 @@ class FoodBloggerSeeder extends Seeder
                 "food_blogger_ig_link" => "https://www.instagram.com/cnlulaby/",
                 "food_blogger_tiktok_link" => "https://www.tiktok.com/@cnlulaby",
                 "food_blogger_youtube_link" => NULL,
-                "food_blogger_image" => "https://starngage.com/wp-content/uploads/2019/05/7.-Cindy-Lulaby.jpg",
+                "food_blogger_image" => "storage/images/foodblogger/CindyLulaby.jpg",
             ],
             [
                 "id" => 4,
@@ -49,7 +49,7 @@ class FoodBloggerSeeder extends Seeder
                 "food_blogger_ig_link" => "https://www.instagram.com/mgdalenaf/",
                 "food_blogger_tiktok_link" => "https://www.tiktok.com/@mgdalenafofficial",
                 "food_blogger_youtube_link" => "https://www.youtube.com/@user-uo6ib1tm9h",
-                "food_blogger_image" => "https://www.dailysia.com/wp-content/uploads/2021/01/Mgdalenaf_11-660x400.jpg?x62393",
+                "food_blogger_image" => "storage/images/foodblogger/Mgdalenaf.jpg",
             ],
             [
                 "id" => 5,
@@ -58,7 +58,7 @@ class FoodBloggerSeeder extends Seeder
                 "food_blogger_ig_link" => "https://www.instagram.com/tanboy_kun",
                 "food_blogger_tiktok_link" => "https://www.tiktok.com/@tanboykun_asli",
                 "food_blogger_youtube_link" => "https://www.youtube.com/@tanboykun",
-                "food_blogger_image" => "https://www.dailysia.com/wp-content/uploads/2019/12/tanboy_kun_cov-660x400.jpg?x62393",
+                "food_blogger_image" => "storage/images/foodblogger/TanboyKun.jpg",
             ],
             [
                 "id" => 6,
@@ -67,7 +67,7 @@ class FoodBloggerSeeder extends Seeder
                 "food_blogger_ig_link" => "https://www.instagram.com/audreykareninaa",
                 "food_blogger_tiktok_link" => "https://www.tiktok.com/@audreykareninaa",
                 "food_blogger_youtube_link" => NULL,
-                "food_blogger_image" => "https://p16.tiktokcdn.com/tos-useast2a-avt-0068-giso/385e9a20f275c18fa449abe7513e9f66~c5_720x720.jpeg",
+                "food_blogger_image" => "storage/images/foodblogger/AudreyKarenina.jpeg",
             ],
             [
                 "id" => 7,
@@ -76,7 +76,7 @@ class FoodBloggerSeeder extends Seeder
                 "food_blogger_ig_link" => "https://www.instagram.com/foodirectory/",
                 "food_blogger_tiktok_link" => "https://www.tiktok.com/@foodirectory",
                 "food_blogger_youtube_link" => "https://www.youtube.com/c/FOODIRECTORY",
-                "food_blogger_image" => "https://p16-sg.tiktokcdn.com/aweme/720x720/tos-alisg-avt-0068/17d96c1f3f2e0ae54b89c8e31e1ca486.jpeg",
+                "food_blogger_image" => "storage/images/foodblogger/Foodirectory.jpeg",
             ],
             [
                 "id" => 8,
@@ -85,7 +85,7 @@ class FoodBloggerSeeder extends Seeder
                 "food_blogger_ig_link" => "https://www.instagram.com/kulinersamacici/",
                 "food_blogger_tiktok_link" => "https://www.tiktok.com/@kulinersamacici",
                 "food_blogger_youtube_link" => "https://www.youtube.com/@kulinersamacici",
-                "food_blogger_image" => "https://img.okezone.com/content/2021/09/16/612/2472181/profil-food-blogger-kulinersamacici-vinny-laurencia-fKj7rIsLNm.jpg",
+                "food_blogger_image" => "storage/images/foodblogger/VinnyLaurencia.jpg",
             ],
             [
                 "id" => 9,
@@ -94,7 +94,7 @@ class FoodBloggerSeeder extends Seeder
                 "food_blogger_ig_link" => "https://www.instagram.com/foodventurer_",
                 "food_blogger_tiktok_link" => "https://www.tiktok.com/@prawnche",
                 "food_blogger_youtube_link" => NULL,
-                "food_blogger_image" => "https://starngage.com/wp-content/uploads/2019/05/18.-Prawnche.jpg",
+                "food_blogger_image" => "storage/images/foodblogger/Foodventurer.jpg",
             ],
             [
                 "id" => 10,
@@ -103,34 +103,34 @@ class FoodBloggerSeeder extends Seeder
                 "food_blogger_ig_link" => "https://www.instagram.com/anakjajan/",
                 "food_blogger_tiktok_link" => "https://www.tiktok.com/@anakjajan",
                 "food_blogger_youtube_link" => "https://www.youtube.com/@ANAKJAJANdiary",
-                "food_blogger_image" => "https://starngage.com/wp-content/uploads/2019/05/4.-Marius-Tjenderasa-Julia-Veronica.jpg",
+                "food_blogger_image" => "storage/images/foodblogger/AnakJajan.jpg",
             ],
             [
                 "id" => 11,
-                "food_blogger_name" => "Shelby.wu",
+                "food_blogger_name" => "Shelby Wu",
                 "food_blogger_description" => "Shelby adalah seorang content creator instagram yang tidak hanya bergerak dalam bidang makanan tetapi dia juga membuat informasi-informasi terkait kemitraan dari tempat yang dia kunjungi.",
                 "food_blogger_ig_link" => "https://www.instagram.com/shelby.wu",
                 "food_blogger_tiktok_link" => "https://www.tiktok.com/@shelby.wu",
                 "food_blogger_youtube_link" => "https://www.youtube.com/@shelbywu",
-                "food_blogger_image" => "https://yt3.googleusercontent.com/nUX8AMqaJPq_DjGUPkypv2WTngTeDJLOAfH8QjlPsHaOwJkAmaW4bGVCEPeSKtC70i1fZuf0Kg=s900-c-k-c0x00ffffff-no-rj",
+                "food_blogger_image" => "storage/images/foodblogger/ShelbyWu.jpg",
             ],
             [
                 "id" => 12,
-                "food_blogger_name" => "bigtummy_culinary",
+                "food_blogger_name" => "Big Tummy Culinary",
                 "food_blogger_description" => "BigTummy_culinary atau yang biasa dipanggil Ken adalah content Creator yang mulanya bergerak pada sosial media instagram yang dapat dengan cepatnya mencapai angka followernya yang tinggi karena konten-konten kulinernya yang menarik.",
                 "food_blogger_ig_link" => "https://www.instagram.com/bigtummy_culinary",
                 "food_blogger_tiktok_link" => "https://www.tiktok.com/@bigtummyculinary",
                 "food_blogger_youtube_link" => "https://www.youtube.com/@tingchannel9908",
-                "food_blogger_image" => "https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/a5bd22277f7a98d76ea2b72f83ab6564.jpeg?x-expires=1674453600&x-signature=%2Fir5p2t9WmO1Eor5PU0FzB0ZNtY%3D",
+                "food_blogger_image" => "storage/images/foodblogger/BigTummyCulinary.jpeg",
             ],
             [
                 "id" => 13,
-                "food_blogger_name" => "kokokuliner",
+                "food_blogger_name" => "Felix Setiawan (@kokokuliner)",
                 "food_blogger_description" => "Lelaki asal Bandung yang sudah memulai kegiatan food blogging sejak tahun 2016 ini merupakan salah satu food blogger yang terampil dalam memanfaatkan ceruk market dari food blogging. Dia percaya bahwa industri review kuliner di Indonesia dapat berkembang pesat.",
                 "food_blogger_ig_link" => "https://www.instagram.com/kokokuliner",
                 "food_blogger_tiktok_link" => "https://www.tiktok.com/@kokokuliner",
                 "food_blogger_youtube_link" => "https://www.youtube.com/@KokokulinerOfficial",
-                "food_blogger_image" => "https://cdn-2.tstatic.net/jabar/foto/bank/images/koko-kuliner.jpg",
+                "food_blogger_image" => "storage/images/foodblogger/KokoKuliner.jpg",
             ],
         ];
 

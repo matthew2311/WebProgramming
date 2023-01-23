@@ -9,7 +9,7 @@
         <div class="card mx-auto my-auto mt-5" style="width: 1000px; background-color: #EF8354">
             <div class="row no-gutters">
                 <div class="col-md-3 mx-auto my-auto">
-                    <img src="{{ $foodBlogger->food_blogger_image }}" class="card-img" alt="">
+                    <img src="{{ asset($foodBlogger->food_blogger_image) }}" class="card-img" alt="">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body text-white">
@@ -42,7 +42,7 @@
                     @foreach ($foodBloggerRec as $fcr)
                         <div class="card mx-2 mt-2 mb-4 px-0" style="width: 15rem;">
                             <a href="{{ route('restaurantDetail', ['id' => $fcr->restaurant_id]) }}"><img
-                                    src="{{ $fcr->restaurant->restaurant_image }}" class="card-img-top" width="100px"
+                                    src="{{ asset($fcr->restaurant->restaurant_image) }}" class="card-img-top" width="100px"
                                     height="250px"></a>
                             <div class="card-body">
                                 <h5 class="card-title" style="color: #0D3B66">
