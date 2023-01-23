@@ -52,6 +52,11 @@
         </div>
     </div>
     @endforeach
+    <br>
+    <div class="justify-content-center d-flex">
+        {{ $foodBloggers->links() }}
+    </div>
 </div>
+
 
 @endsection
