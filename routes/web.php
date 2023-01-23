@@ -24,29 +24,28 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
 
+// Restaurant
 Route::get('/restaurant/all', [RestaurantController::class, 'restaurantIndex'])->name('restaurantIndex');
-
 Route::get('/restaurant/detail/{id}', [RestaurantController::class, 'restaurantDetail'])->name('restaurantDetail');
-
 Route::get('/restaurant/category/{id}', [RestaurantController::class, 'categoryIndex'])->name('categoryIndex');
-
 Route::get('/restaurant/location', [RestaurantController::class, 'restaurantLocationView'])->name('restaurantLocationView');
-
 Route::get('/restaurant/location/{loc}', [RestaurantController::class, 'restaurantLocation'])->name('restaurantLocation');
+Route::get('/search', [HomeController::class, 'search'])->name('search');
 
+// FoodBlogger
 Route::get('/foodblogger/all', [FoodBloggerController::class, 'foodBloggerIndex'])->name('foodBloggerIndex');
-
 Route::get('/foodblogger/detail/{id}', [FoodBloggerController::class, 'foodBloggerDetail'])->name('foodBloggerDetail');
 
-Route::get('/search', [HomeController::class, 'search'])->name('search');
 
 //Admin
 Route::get('/admin/login', [adminController::class, 'loginView']);
 Route::post('/admin/login/post', [adminController::class, 'login'])->name('adminLogin');
 Route::get('/admin/logout', [adminController::class, 'logout'])->name('adminLogout');
-Route::get('/admin/manage/restaurant', [adminController::class, 'manageRestaurant'])->name('manageRestaurant')->middleware([AuthCheck::class]);
-Route::get('/admin/manage/foodblogger', [adminController::class, 'manageFoodBlogger'])->name('manageFoodBlogger')->middleware([AuthCheck::class]);
-Route::get('/admin/manage/restaurant/search', [adminController::class, 'searchRestaurant'])->name('searchRestaurant')->middleware([AuthCheck::class]);
-Route::get('/admin/manage/foodblogger/search', [adminController::class, 'searchFoodBlogger'])->name('searchFoodBlogger')->middleware([AuthCheck::class]);
-Route::delete('/admin/manage/restaurant/{id}', [adminController::class, 'deleteRestaurant'])->name('deleteRestaurant')->middleware([AuthCheck::class]);
-Route::delete('/admin/manage/foodblogger/{id}', [adminController::class, 'deleteFoodBlogger'])->name('deleteFoodBlogger')->middleware([AuthCheck::class]);
+Route::middleware('admin')->group(function () {
+    Route::get('/admin/manage/restaurant', [adminController::class, 'manageRestaurant'])->name('manageRestaurant');
+    Route::get('/admin/manage/foodblogger', [adminController::class, 'manageFoodBlogger'])->name('manageFoodBlogger');
+    Route::get('/admin/manage/restaurant/search', [adminController::class, 'searchRestaurant'])->name('searchRestaurant');
+    Route::get('/admin/manage/foodblogger/search', [adminController::class, 'searchFoodBlogger'])->name('searchFoodBlogger');
+    Route::delete('/admin/manage/restaurant/{id}', [adminController::class, 'deleteRestaurant'])->name('deleteRestaurant');
+    Route::delete('/admin/manage/foodblogger/{id}', [adminController::class, 'deleteFoodBlogger'])->name('deleteFoodBlogger');
+});
