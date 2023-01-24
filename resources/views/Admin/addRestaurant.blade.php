@@ -5,18 +5,21 @@
 @endsection
 
 @section('body')
-    <div class="container">
-        <div class="p-2">
+    <div class="container" style="padding-bottom: 2rem">
+        <div class="mt-3 mb-3">
             <form action="{{ route('manageRestaurant') }}" style="background-color: border-radius:25px">
-                <button type="submit" class="btn btn-primary" style="color: #FFFFFF; font-weight:bold">Kembali</button>
+                <button type="submit" class="btn"
+                    style="color: #FFFFFF; font-weight:bold; background-color: #0D3B66;">Kembali</button>
             </form>
         </div>
 
-        <div>
-            <form action="{{ route('addRestaurantLogic') }}" method="POST" enctype="multipart/form-data">
+        <div class="card p-4" style="color: #0D3B66">
+            <h2> <b>Hasil Pencarian Food Blogger</b></h2>
+            <form action="{{ route('addRestaurantLogic') }}" style="font-weight: bold" method="POST"
+                enctype="multipart/form-data">
                 @csrf
-                <div class="form-group">
-                    <label>Nama Restoran<span style="color: red">*</label>
+                <div class="form-group mt-2">
+                    <label class="mb-2">Nama Restoran<span style="color: red">*</label>
                     <input type="text" class="form-control @error('restaurant_name') is-invalid @enderror" id=""
                         name="restaurant_name" value="{{ old('restaurant_name') }}">
                     @error('restaurant_name')
@@ -25,8 +28,8 @@
                         </div>
                     @enderror
                 </div>
-                <div class="form-group">
-                    <label>Alamat Restoran<span style="color: red">*</label>
+                <div class="form-group mt-2">
+                    <label class="mb-2">Alamat Restoran<span style="color: red">*</label>
                     <textarea type="long text" class="form-control @error('restaurant_address') is-invalid @enderror" id=""
                         rows="3" name="restaurant_address">{{ old('restaurant_address') }}</textarea>
                     @error('restaurant_address')
@@ -35,11 +38,11 @@
                         </div>
                     @enderror
                 </div>
-                <div class="mb-3">
+                <div class="mb-2 mt-2">
                     <label for="" class="form-label">Kota Restoran<span style="color: red">*</label>
                     <select id="inputState" class="form-select @error('restaurant_city') is-invalid @enderror"
                         name="restaurant_city">
-                        <option>Pilih Kota Restoran</option>
+                        <option value="">Pilih Kota Restoran</option>
                         <option value="Jakarta Barat" @if (old('restaurant_city') == 'Jakarta Barat') {{ 'selected' }} @endif>Jakarta
                             Barat</option>
                         <option value="Jakarta Pusat" @if (old('restaurant_city') == 'Jakarta Pusat') {{ 'selected' }} @endif>Jakarta
@@ -57,11 +60,11 @@
                         </div>
                     @enderror
                 </div>
-                <div>
+                <div class="mb-2 mt-2">
                     <label for="" class="form-label">Kategori Restoran<span style="color: red">*</label>
                     <select id="inputState" class="form-select @error('restaurant_category_id') is-invalid @enderror"
                         name="restaurant_category_id">
-                        <option>Pilih Kategori Restoran</option>
+                        <option value="">Pilih Kategori Restoran</option>
                         <option value=1 @if (old('restaurant_category_id') == 1) {{ 'selected' }} @endif>Indonesian Food
                         </option>
                         <option value=2 @if (old('restaurant_category_id') == 2) {{ 'selected' }} @endif>Chinese Food</option>
@@ -77,8 +80,8 @@
                         </div>
                     @enderror
                 </div>
-                <div class="form-group">
-                    <label>Link Google Maps<span style="color: red">*</label>
+                <div class="form-group mt-2">
+                    <label class="mb-2">Link Google Maps<span style="color: red">*</label>
                     <input type="url" class="form-control @error('restaurant_gmaps') is-invalid @enderror"
                         value="{{ old('restaurant_gmaps') }}" name="restaurant_gmaps" id="">
                     @error('restaurant_gmaps')
@@ -87,8 +90,8 @@
                         </div>
                     @enderror
                 </div>
-                <div class="form-group">
-                    <label>Link WhatsApp<span style="color: red">*</label>
+                <div class="form-group mt-2">
+                    <label class="mb-2">Link WhatsApp<span style="color: red">*</label>
                     <input type="url" class="form-control @error('restaurant_whatsapp_link') is-invalid @enderror"
                         value="{{ old('restaurant_whatsapp_link') }}" name="restaurant_whatsapp_link" id="">
                     @error('restaurant_whatsapp_link')
@@ -97,35 +100,40 @@
                         </div>
                     @enderror
                 </div>
-                <div class="form-group">
-                    <label>Link Instagram</label>
+                <div class="form-group mt-2">
+                    <label class="mb-2">Link Instagram</label>
                     <input type="url" class="form-control" value="{{ old('restaurant_instagram_link') }}"
                         name="restaurant_instagram_link" id="">
                 </div>
-                <div class="form-group">
-                    <label>Link Tiktok</label>
+                <div class="form-group mt-2">
+                    <label class="mb-2">Link Tiktok</label>
                     <input type="url" class="form-control" value="{{ old('restaurant_tiktok_link') }}"
                         name="restaurant_tiktok_link" id="">
                 </div>
-                <div class="form-group">
-                    <label>Link GoFood</label>
+                <div class="form-group mt-2">
+                    <label class="mb-2">Link GoFood</label>
                     <input type="url" class="form-control" value="{{ old('restaurant_gofood') }}"
                         name="restaurant_gofood" id="">
                 </div>
-                <div class="form-group">
-                    <label>Link GrabFood</label>
+                <div class="form-group mt-2">
+                    <label class="mb-2">Link GrabFood</label>
                     <input type="url" class="form-control" value="{{ old('restaurant_grabfood') }}"
                         name="restaurant_grabfood" id="">
                 </div>
-                <div class="form-group">
-                    <div class="row">
-                        <label>Foto Restoran<span style="color: red">*</label>
-                        <label for="exampleFormControlFile1"><span style="font-weight: bold">Tipe File:
-                                .jpg/.jpeg/.png</span></label>
-                        <input type="file" class="form-control-file" id="" name="restaurant_image">
-                    </div>
+
+                <div class="form-group mt-2">
+                    <label for="restaurant_image" class="mb-2">Foto Restoran<span style="color: red">* </span> <br>
+                        Tipe File:
+                        .jpg/.jpeg/.png</label>
+                    <input class="form-control" type="file" id="restaurant_image" name="restaurant_image">
+                    @error('restaurant_image')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
-                <button type="submit" class="btn btn-warning mt-4 mb-3">Tambah Restoran</button>
+                <button type="submit" style="border-color: #0D3B66" class="btn mt-3 mb-3 tambah"><b>Tambah
+                        Restoran</b></button>
             </form>
         </div>
     </div>
