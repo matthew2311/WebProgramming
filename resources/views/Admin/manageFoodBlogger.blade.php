@@ -23,6 +23,15 @@
         {{-- Success Message --}}
         <div style="max-width: 700px;" class="mx-auto my-auto">
             @if (Session::get('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ Session::get('success') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+        </div>
+
+        <div style="max-width: 700px;" class="mx-auto my-auto">
+            @if (Session::get('success2'))
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                     {{ Session::get('success') }}
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -49,7 +58,7 @@
                                 {{-- blm dihubungkan dengan edit page --}}
                                 <form action="{{ route('updateFoodBloggerView', ['id' => $fb->id]) }}" style="background-color: #FDB221; border-radius: 25px">
                                     <button type="submit" class="btn white-link text-decoration-none bg-warning fs-5"
-                                        style="color: #0D3B66; font-weight:bold">Edit Blogger</button>
+                                        style="color: #0D3B66; font-weight:bold">Edit Food Blogger</button>
                                 </form>
 
                                 {{-- DELETE --}}

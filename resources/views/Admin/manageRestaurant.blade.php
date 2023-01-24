@@ -30,6 +30,15 @@
             @endif
         </div>
 
+        <div style="max-width: 700px;" class="mx-auto my-auto">
+            @if (Session::get('success2'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{ Session::get('success') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+        </div>
+
         @foreach ($restaurants as $rs)
             <div class="card mx-auto my-auto mt-2" style="max-width: 700px;">
                 <div class="row no-gutters p-4">

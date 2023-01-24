@@ -91,7 +91,9 @@
                                 <li><a class="dropdown-item rounded-2 text-navbar"
                                         href="{{ route('manageRestaurant') }}">Kelola Restoran</a></li>
                                 <li><a class="dropdown-item rounded-2 text-navbar"
-                                        href="{{ route('manageFoodBlogger') }}">Kelola Food Bloggers</a></li>
+                                        href="{{ route('manageFoodBlogger') }}">Kelola Food Blogger</a></li>
+                                <li><a class="dropdown-item rounded-2 text-navbar"
+                                        href="{{ route('manageRecommendation') }}">Kelola Rekomendasi</a></li>
                             </ul>
                         </li>
                     @endif

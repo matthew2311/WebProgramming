@@ -44,10 +44,12 @@ Route::get('/admin/logout', [AdminController::class, 'logout'])->name('adminLogo
 Route::middleware('admin')->group(function () {
     Route::get('/admin/manage/restaurant', [AdminController::class, 'manageRestaurant'])->name('manageRestaurant');
     Route::get('/admin/manage/foodblogger', [AdminController::class, 'manageFoodBlogger'])->name('manageFoodBlogger');
+    Route::get('/admin/manage/recommendation', [AdminController::class, 'manageRecommendation'])->name('manageRecommendation');
     Route::get('/admin/manage/restaurant/search', [AdminController::class, 'searchRestaurant'])->name('searchRestaurant');
     Route::get('/admin/manage/foodblogger/search', [AdminController::class, 'searchFoodBlogger'])->name('searchFoodBlogger');
     Route::delete('/admin/manage/restaurant/{id}', [AdminController::class, 'deleteRestaurant'])->name('deleteRestaurant');
     Route::delete('/admin/manage/foodblogger/{id}', [AdminController::class, 'deleteFoodBlogger'])->name('deleteFoodBlogger');
+    Route::delete('/admin/manage/recommendation/{id}', [AdminController::class, 'deleteRecommendation'])->name('deleteRecommendation');
     Route::get('/admin/manage/restaurant/add', [AdminController::class, 'addRestaurantView'])->name('addRestaurantView');
     Route::post('/admin/manage/restaurant/add/post', [AdminController::class, 'addRestaurantLogic'])->name('addRestaurantLogic');
     Route::get('/admin/manage/restaurant/update/{id}', [AdminController::class, 'updateRestaurantView'])->name('updateRestaurantView');
