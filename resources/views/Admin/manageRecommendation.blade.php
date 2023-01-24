@@ -85,7 +85,7 @@
     @endforeach
     <br>
     <div class="justify-content-center d-flex mt-2">
-        {{ $foodBloggers->links() }}
+        {{ $recommendations->links() }}
     </div>
 </div>
 @endsection
