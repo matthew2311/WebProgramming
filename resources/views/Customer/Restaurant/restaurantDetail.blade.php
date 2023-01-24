@@ -71,7 +71,7 @@
                             </div>
                             @if ($rd->restaurant->restaurant_whatsapp_link != null)
                                 <a href="{{ $rd->restaurant->restaurant_whatsapp_link }}" target="_blank"
-                                    class="btn btn-success"><i class="bi bi-whatsapp"></i><b>Book Now via WhatsApp</b></a>
+                                    class="btn btn-success"><i class="bi bi-whatsapp"></i><b>Hubungi Restoran via WhatsApp</b></a>
                             @endif
                         </div>
                     </div>
