@@ -20,7 +20,7 @@
                             <div class="card home br-2" style="width: 100%">
                                 <img class="card-img-top" src="{{ asset($r->restaurant->restaurant_image) }}"
                                     height="250px">
-                                <div class="card-body" style="background-color: #EAEAEA">
+                                <div class="card-body" style="background-color: #EAEAEA;">
                                     <h5 class="card-title" style="color: #0D3B66; margin-bottom: 0.3rem">
                                         <b>{{ Str::limit($r->restaurant->restaurant_name, 30) }}</b>
                                     </h5>
