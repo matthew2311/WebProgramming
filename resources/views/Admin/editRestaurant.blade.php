@@ -7,7 +7,7 @@
 @section('body')
     <div class="container">
         <div class="p-2">
-            <form action="{{ route('manageRestaurant') }}" style="background-color: #0C3459; border-radius:25px">
+            <form action="{{ route('manageRestaurant') }}" style="background-color: border-radius:25px">
                 <button type="submit" class="btn btn-primary" style="color: #FFFFFF; font-weight:bold">Kembali</button>
             </form>
         </div>
