@@ -60,6 +60,4 @@ Route::middleware('admin')->group(function () {
     Route::patch('/admin/manage/foodblogger/update/post/{id}', [AdminController::class, 'updateFoodBloggerLogic'])->name('updateFoodBloggerLogic');
     Route::get('/admin/manage/recommendation/add', [AdminController::class, 'addRecommendationView'])->name('addRecommendationView');
     Route::post('/admin/manage/recommendation/add/post', [AdminController::class, 'addRecommendationLogic'])->name('addRecommendationLogic');
-    Route::get('/admin/manage/recommendation/update/{id}', [AdminController::class, 'updateRecommendationView'])->name('updateRecommendationView');
-    Route::patch('/admin/manage/recommendation/update/post/{id}', [AdminController::class, 'updateRecommendationLogic'])->name('updateRecommendationLogic');
 });
