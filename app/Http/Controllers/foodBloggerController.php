@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\FoodBlogger;
 use App\Models\RecommendedBy;
-use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Http\Request;
 
 class FoodBloggerController extends Controller

@@ -53,7 +53,7 @@
 
         <h2 class="mb-4" style="color: #B63D42; font-weight: bold">Tempat Populer Saat Ini</h2>
 
-        <div class="row align-items-md-stretch">
+        <div class="row align-items-md-stretch justify-content-center">
             <a href="{{ route('restaurantLocation', ['loc' => 'jakarta-utara']) }}"
                 style="text-decoration: none !important;width: 50%" class="mb-4">
                 <div class="h-80 p-4 border rounded-4 d-flex"

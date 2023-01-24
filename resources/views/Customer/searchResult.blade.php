@@ -15,18 +15,24 @@
         @else
             <div class="row pt-1">
                 @foreach ($search_results as $sr)
-                    <div class="col-sm-4 mb-4" style="width: 15rem;">
-                        <a href="{{ route('foodBloggerDetail', ['id' => $sr->id]) }}">
-                            <img src="{{ $sr->food_blogger_image }}" class="card-img-top" width="100px" height="250px"></a>
-                        <div class="card-body">
-                            <h5 class="card-title" style="color: #0D3B66">{{ $sr->food_blogger_name }}</h5>
-                            <a href="{{ route('foodBloggerDetail', ['id' => $sr->id]) }}"
-                                class="btn btn-outline-primary btn-block flex-wrap d-flex justify-content-center">Detail
-                                Food Blogger</a>
-                        </div>
+                    <div class="col-sm-4 mb-4">
+                        <a href="{{ route('foodBloggerDetail', ['id' => $sr->id]) }}" style="text-decoration: none">
+                            <div class="card home br-2" style="width: 100%">
+                                <img class="card-img-top" src="{{ asset($sr->food_blogger_image) }}" height="250px">
+                                <div class="card-body" style="background-color: #EAEAEA">
+                                    <h5 class="card-title" style="color: #0D3B66"><b>{{ $sr->food_blogger_name }}</b>
+                                    </h5>
+                                    @foreach ($recommend as $r)
+                                        @if ($r->foodBloggerID == $sr->id)
+                                            <p class="card-text" style="color: #0D3B66">{{ $r->recommendationTotal }}
+                                                rekomendasi</p>
+                                        @endif
+                                    @endforeach
+                                </div>
+                            </div>
+                        </a>
                     </div>
                 @endforeach
-            </div>
         @endif
 
         <div class="justify-content-center d-flex">
