@@ -26,7 +26,12 @@
             </div>
             <div class="form-group">
                 <label>Deskripsi Food Blogger<span style="color: red">*</label>
-                <textarea type="long text" class="form-control" id="" rows="5" name="food_blogger_description">{{ $foodBlogger->food_blogger_description }}</textarea>
+                <textarea type="long text" class="form-control @error('food_blogger_description') is-invalid @enderror" id="" rows="5" name="food_blogger_description">{{ $foodBlogger->food_blogger_description }}</textarea>
+                @error('food_blogger_description')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
             <div class="form-group">
                 <label>Link Instagram</label>
