@@ -58,7 +58,7 @@
                                     @csrf
                                     <button class="btn btn-danger fs-5" type="submit"
                                         style="color: #FFFFFF; font-weight:bold">
-                                        Hapus Restaurant
+                                        Hapus Restoran
                                     </button>
                                 </form>
                             </div>
