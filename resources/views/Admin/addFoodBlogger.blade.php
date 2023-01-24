@@ -8,7 +8,7 @@
     <div class="container">
         <div class="p-2">
             <form action="{{ route('manageFoodBlogger') }}" style="background-color: border-radius:25px">
-                <button type="submit" class="btn btn-primary" style="color: #FFFFFF; font-weight:bold"> Back </button>
+                <button type="submit" class="btn btn-primary" style="color: #FFFFFF; font-weight:bold">Kembali</button>
             </form>
         </div>
         <form action="{{ route('addFoodBloggerLogic') }}" method="POST" enctype="multipart/form-data">
