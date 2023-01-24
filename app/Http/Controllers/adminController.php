@@ -26,6 +26,7 @@ class AdminController extends Controller
         if (Auth::attempt($credentials, true) == true) {
             if ($request->remember) {
                 Cookie::queue('userEmail', "$request->email", 60);
+                Cookie::queue('userPassword', "$request->password", 60);
             }
             return redirect()->route('home');
         } else {
@@ -39,20 +40,19 @@ class AdminController extends Controller
     public function logout()
     {
         Auth::logout();
-        Cookie::queue(Cookie::forget('userEmail'));
         return redirect()->route('home');
     }
 
     public function manageRestaurant()
     {
-        $restaurants = Restaurant::paginate(10)->withQueryString();
+        $restaurants = Restaurant::paginate(5)->withQueryString();
 
         return view('Admin.manageRestaurant', compact('restaurants'));
     }
 
     public function manageFoodBlogger()
     {
-        $foodBloggers = FoodBlogger::paginate(10)->withQueryString();
+        $foodBloggers = FoodBlogger::paginate(3)->withQueryString();
 
         return view('Admin.manageFoodBlogger', compact('foodBloggers'));
     }
@@ -72,14 +72,14 @@ class AdminController extends Controller
         FoodBlogger::where('id', $request->id)->delete();
 
 
-        return redirect()->route('manageFoodBlogger');
+        return redirect()->back()->with('success', 'Food Blooger berhasil dihapus');
     }
 
     public function searchRestaurant(Request $request)
     {
         $search_restaurant_name = $request->search_restaurant_name;
 
-        $search_results = Restaurant::where('restaurant_name', 'LIKE', "%$search_restaurant_name%")->paginate(10)->withQueryString();
+        $search_results = Restaurant::where('restaurant_name', 'LIKE', "%$search_restaurant_name%")->paginate(6)->withQueryString();
 
         return view('Admin.adminSearchRestaurantResult', compact('search_results'));
     }
@@ -88,7 +88,7 @@ class AdminController extends Controller
     {
         $search_food_blogger_name = $request->search_food_blogger_name;
 
-        $search_results = FoodBlogger::where('food_blogger_name', 'LIKE', "%$search_food_blogger_name%")->paginate(10)->withQueryString();
+        $search_results = FoodBlogger::where('food_blogger_name', 'LIKE', "%$search_food_blogger_name%")->paginate(6)->withQueryString();
 
         return view('Admin.adminSearchFoodBloggerResult', compact('search_results'));
     }

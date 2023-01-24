@@ -57,46 +57,59 @@
         </div>
     </header>
 
-    <main style="background-color: #CCD2E3; padding-bottom: 3rem">
-        <div class="col-md-3 container d-flex flex-wrap justify-content-center mt-5">
-            @if ($errors->any())
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    {{$errors->first()}}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <section class="h-100" style="background-color: #CCD2E3; padding-bottom: 3rem">
+        <div class="container h-100">
+            <div class="row justify-content-sm-center h-100">
+                <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9 mt-5">
+                    @if ($errors->any())
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            {{ $errors->first() }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                aria-label="Close"></button>
+                        </div>
+                    @endif
+                    <div class="card shadow-lg">
+                        <div class="card-body p-5" style="color: #0D3B66">
+                            <h1 class="fs-3 card-title fw-bold mb-3 text-center">Login</h1>
+                            <form action={{ route('adminLogin') }} method="POST">
+                                @csrf
+                                <div class="mb-3">
+                                    <div class="mb-2 w-100">
+                                        <label class="fs-5 fw-bold" for="password">Email</label>
+                                    </div>
+                                    <input type="email" placeholder="Enter Your Email" id="email" name="email"
+                                        value="{{ Cookie::get('userEmail') !== null ? Cookie::get('userEmail') : '' }}"
+                                        class="form-control" />
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="mb-2 w-100">
+                                        <label class="fs-5 fw-bold" for="password">Password</label>
+                                    </div>
+                                    <input type="password" name="password" placeholder="Enter Your Password"
+                                        id="password"
+                                        value="{{ Cookie::get('userPassword') !== null ? Cookie::get('userPassword') : '' }}"
+                                        class="form-control" />
+                                </div>
+
+                                <div class="form-check mb-3">
+                                    <input type="checkbox" name="remember" value="remember-me" class="form-check-input">
+                                    <label for="remember" class="form-check-label fw-bold">Remember Me</label>
+                                </div>
+                                <div class="w-100 d-flex justify-content-center">
+                                    <button class="btn fw-bold"
+                                        style="background-color: #0D3B66; color: white; width: 30%"
+                                        type="submit">Login</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-            @endif
-            <main class="form-signin w-100 m-auto">
-                <form action={{route('adminLogin')}} method="POST" class="flex-wrap">
-                    @csrf
-                    <a class="navbar-brand px-2 d-flex justify-content-center text-center" href="/"><h1>Evoba</h1></a>
-                    <h1 class="h3 mb-3 fw-normal d-flex justify-content-center text-center">Log In with Admin Account</h1>
-
-                    <div class="form-floating">
-                        <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email" value="{{Cookie::get('userEmail') !==  null ? Cookie::get('userEmail') : ''}}">
-                        <label for="floatingInput">Email address</label>
-                    </div>
-                    <div class="form-floating">
-                        <input type="password" class="form-control" id="password" placeholder="Password" name="password">
-                        <label for="floatingPassword">Password</label>
-                    </div>
-
-                    <div class="checkbox mb-3">
-                        <label>
-                            <input type="checkbox" value="remember-me" name="remember"> Remember me
-                        </label>
-                    </div>
-
-                    {{-- @if ($errors->any())
-                        <p class="text-danger">{{$errors->first()}}</p>
-                    @endif --}}
-
-                    <button class="w-100 btn btn-lg btn-primary" type="submit">Log in</button>
-                </form>
-              </main>
+            </div>
         </div>
-    </main>
+    </section>
 
-    <div class="container">
+    <div class="container mt-3">
 
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top">
             <div class="col-md-4 d-flex align-items-center ms-3">
@@ -112,8 +125,8 @@
                             height="24">
                             <use xlink:href="#instagram"></use>
                         </svg></a></li>
-                <li class="ms-3"><a class="text-muted" style="color:red !important" href="#"><svg class="bi"
-                            width="24" height="24">
+                <li class="ms-3"><a class="text-muted" style="color:red !important" href="#"><svg
+                            class="bi" width="24" height="24">
                             <use xlink:href="#facebook"></use>
                         </svg></a></li>
             </ul>
