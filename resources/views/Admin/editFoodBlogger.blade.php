@@ -5,40 +5,55 @@
 @endsection
 
 @section('body')
-<div class="container">
-    <div class="p-2">
-        <form action="#" style="background-color: #0C3459; border-radius:25px">
-            <button type="submit" class="btn btn-primary" style="color: #FFFFFF; font-weight:bold"> Back </button>
-        </form>
-        <form>
+    <div class="container">
+        <div class="p-2">
+            <form action="{{ route('manageFoodBlogger') }}" style="background-color: border-radius:25px">
+                <button type="submit" class="btn btn-primary" style="color: #FFFFFF; font-weight:bold"> Back </button>
+            </form>
+        </div>
+        <form action="{{ route('updateFoodBloggerLogic', ['id' => $foodBlogger->id]) }}" method="POST" enctype="multipart/form-data">
+            @method('patch')
+            @csrf
             <div class="form-group">
-                <label>name</label><br>
-                <input type="" class="form-control" id="">
+                <label>Nama Food Blogger<span style="color: red">*</label>
+                <input type="" class="form-control @error('food_blogger_name') is-invalid @enderror"
+                    value="{{ $foodBlogger->food_blogger_name }}" id="" name="food_blogger_name">
+                @error('food_blogger_name')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
             <div class="form-group">
-                <label>Description</label><br>
-                <textarea class="form-control" id="" rows="5"></textarea>
+                <label>Deskripsi Food Blogger<span style="color: red">*</label>
+                <textarea type="long text" class="form-control" id="" rows="5" name="food_blogger_description">{{ $foodBlogger->food_blogger_description }}</textarea>
             </div>
             <div class="form-group">
-                <label>Instagram Link</label><br>
-                <input type="" class="form-control" id="">
+                <label>Link Instagram</label>
+                <input type="url" class="form-control" value="{{ $foodBlogger->food_blogger_ig_link }}" id=""
+                    name="food_blogger_ig_link">
             </div>
             <div class="form-group">
-                <label>Tiktok Link</label><br>
-                <input type="" class="form-control" id="">
+                <label>Link Tiktok</label>
+                <input type="url" class="form-control" value="{{ $foodBlogger->food_blogger_tiktok_link }}" id=""
+                    name="food_blogger_tiktok_link">
             </div>
             <div class="form-group">
-                <label>Youtube Link</label><br>
-                <input type="" class="form-control" id="">
+                <label>Link Youtube</label>
+                <input type="url" class="form-control" value="{{ $foodBlogger->food_blogger_youtube_link }}" id=""
+                    name="food_blogger_youtube_link">
             </div>
             <div class="form-group">
-                <label>Photo</label><br>
-                <input type="file" class="form-control-file" id="">
+                <div class="row">
+                    <label>Foto Food Blogger<span style="color: red">*</label>
+                    <label for="exampleFormControlFile1"><span style="font-weight: bold">Tipe File:
+                            .jpg/.jpeg/.png</span></label>
+                    <input type="file" class="form-control-file" id="" name="food_blogger_image">
+                </div>
             </div>
             <br>
-            <button>Save</button>
+            <button type="submit" class="btn btn-warning">Perbarui Data Food Blogger</button>
             <br>
         </form>
     </div>
-</div>
 @endsection
