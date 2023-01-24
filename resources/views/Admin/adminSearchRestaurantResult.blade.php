@@ -47,7 +47,7 @@
                                         {{-- blm dihubungkan dengan edit page --}}
                                         <form action="#" style="background-color: #FDB221; border-radius: 25px">
                                             <button type="submit" class="btn white-link text-decoration-none bg-warning"
-                                                style="color: #0D3B66; font-weight:bold">Edit Restaurant</button>
+                                                style="color: #0D3B66; font-weight:bold">Edit Restoran</button>
                                         </form>
 
                                         {{-- DELETE --}}
@@ -57,7 +57,7 @@
                                             @csrf
                                             <button class="btn btn-danger" type="submit"
                                                 style="color: #FFFFFF; font-weight:bold">
-                                                Hapus Restaurant
+                                                Hapus Restoran
                                             </button>
                                         </form>
                                     </div>
@@ -68,7 +68,7 @@
                 @endforeach
             </div>
         @endif
-        <div class="justify-content-center d-flex mt-3">
+        <div class="justify-content-center d-flex mt-2">
             {{ $search_results->links() }}
         </div>
     </div>

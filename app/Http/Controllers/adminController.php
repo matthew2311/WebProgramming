@@ -46,20 +46,21 @@ class AdminController extends Controller
 
     public function manageRestaurant()
     {
-        $restaurants = Restaurant::paginate(10)->withQueryString();
+        $restaurants = Restaurant::paginate(6)->withQueryString();
 
         return view('Admin.manageRestaurant', compact('restaurants'));
     }
 
     public function manageFoodBlogger()
     {
-        $foodBloggers = FoodBlogger::paginate(10)->withQueryString();
+        $foodBloggers = FoodBlogger::paginate(6)->withQueryString();
 
         return view('Admin.manageFoodBlogger', compact('foodBloggers'));
     }
 
-    public function manageRecommendation(){
-        $recommendations = RecommendedBy::paginate(10)->withQueryString();
+    public function manageRecommendation()
+    {
+        $recommendations = RecommendedBy::paginate(6)->withQueryString();
 
         return view('Admin.manageRecommendation', compact('recommendations'));
     }
@@ -81,7 +82,8 @@ class AdminController extends Controller
         return redirect()->route('manageFoodBlogger')->with('success2', 'Food Blogger berhasil dihapus');
     }
 
-    public function deleteRecommendation(Request $request){
+    public function deleteRecommendation(Request $request)
+    {
         RecommendedBy::where('id', $request->id)->delete();
 
         return redirect()->route('manageRecommendation')->with('success2', 'Rekomendasi berhasil dihapus');
@@ -253,6 +255,5 @@ class AdminController extends Controller
         ]);
 
         return redirect()->route('manageFoodBlogger')->with('success', 'Berhasil Memperbarui Data Food Blogger');
-
     }
 }

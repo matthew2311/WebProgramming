@@ -78,7 +78,7 @@
         </div>
     @endforeach
     <br>
-    <div class="justify-content-center d-flex">
+    <div class="justify-content-center d-flex mt-2">
         {{ $foodBloggers->links() }}
     </div>
 </div>

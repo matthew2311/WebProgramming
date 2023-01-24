@@ -26,8 +26,7 @@
             @if (Session::get('success'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                     {{ Session::get('success') }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert"
-                        aria-label="Close"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
         </div>
@@ -36,57 +35,53 @@
             @if (Session::get('success2'))
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                     {{ Session::get('success') }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert"
-                        aria-label="Close"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
         </div>
 
-        @foreach ($foodBloggers as $fb)
-            <div class="card mx-auto my-auto mt-2" style="max-width: 700px;">
-                <div class="row no-gutters p-4">
-                    <div class="col-md-4">
-                        <img src="{{ asset($fb->food_blogger_image) }}" class="card-img"
-                            alt="{{ $fb->food_blogger_name }}"
-                            style="height: 200px !important; width: 200px !important">
-                    </div>
-                    <div class="col">
-                        <div class="card-body">
-                            <h2 class="card-title" style="color: #0D3B66; font-weight:bold">
-                                <b>{{ $fb->food_blogger_name }}</b>
-                            </h2>
-                            <br>
+        <div class="row pt-1 justify-content-center">
+            @foreach ($foodBloggers as $fb)
+                <div class="card mb-4 p-4"
+                    style="width: 575px; {{ $loop->iteration % 2 == 0 ? 'margin-left: 1.25rem' : 'margin-right: 1.25rem' }}">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="{{ asset($fb->food_blogger_image) }}" class="card-img"
+                                alt="{{ $fb->food_blogger_image }}"
+                                style="height: 150px !important; width: 150px !important">
+                        </div>
+                        <div class="col-md-8 d-flex align-items-center">
+                            <div class="card-body" style="padding: 0px">
+                                <h2 class="card-title mb-4" style="color: #0D3B66; font-weight:bold">
+                                    {{ $fb->food_blogger_name }}</h2>
 
-                            <div class="d-grid gap-2 d-md-flex justify-content-md">
-                                {{-- EDIT --}}
-                                {{-- blm dihubungkan dengan edit page --}}
-                                <form action="{{ route('updateFoodBloggerView', ['id' => $fb->id]) }}"
-                                    style="background-color: #FDB221; border-radius: 25px">
-                                    <button type="submit"
-                                        class="btn white-link text-decoration-none bg-warning fs-5"
-                                        style="color: #0D3B66; font-weight:bold">Edit Food
-                                        Blogger</button>
-                                </form>
+                                <div class="d-grid gap-2 d-md-flex justify-content-md">
+                                    <form action="{{ route('updateFoodBloggerView', ['id' => $fb->id]) }}"
+                                        style="background-color: #FDB221; border-radius: 25px">
+                                        <button type="submit" class="btn white-link text-decoration-none bg-warning fs-6"
+                                            style="color: #0D3B66; font-weight:bold">Edit Food
+                                            Blogger</button>
+                                    </form>
 
-                                {{-- DELETE --}}
-                                <form action="{{ route('deleteFoodBlogger', ['id' => $fb->id]) }}"
-                                    style="background-color: #FF0000; border-radius: 25px"
-                                    method="POST">
-                                    @method('delete')
-                                    @csrf
-                                    <button class="btn btn-danger fs-5" type="submit"
-                                        style="color: #FFFFFF; font-weight:bold">
-                                        Hapus Food Blogger
-                                    </button>
-                                </form>
+                                    {{-- DELETE --}}
+                                    <form action="{{ route('deleteFoodBlogger', ['id' => $fb->id]) }}"
+                                        style="background-color: #FF0000; border-radius: 25px" method="POST">
+                                        @method('delete')
+                                        @csrf
+                                        <button class="btn btn-danger fs-6" type="submit"
+                                            style="color: #FFFFFF; font-weight:bold">
+                                            Hapus Food Blogger
+                                        </button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        @endforeach
-        <br>
-        <div class="justify-content-center d-flex">
+            @endforeach
+        </div>
+
+        <div class="justify-content-center d-flex mt-2">
             {{ $foodBloggers->links() }}
         </div>
     </div>

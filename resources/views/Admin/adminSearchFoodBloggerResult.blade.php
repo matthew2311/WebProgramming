@@ -57,7 +57,7 @@
                                             @csrf
                                             <button class="btn btn-danger" type="submit"
                                                 style="color: #FFFFFF; font-weight:bold">
-                                                Remove Blogger
+                                                Hapus Blogger
                                             </button>
                                         </form>
                                     </div>
@@ -68,7 +68,7 @@
                 @endforeach
             </div>
         @endif
-        <div class="justify-content-center d-flex">
+        <div class="justify-content-center d-flex mt-2">
             {{ $search_results->links() }}
         </div>
     </div>
