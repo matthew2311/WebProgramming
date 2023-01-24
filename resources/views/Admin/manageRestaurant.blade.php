@@ -46,12 +46,11 @@
                         <img src="{{ asset($rs->restaurant_image) }}" class="card-img" alt="{{ $rs->restaurant_name }}"
                             style="height: 200px !important; width: 200px !important">
                     </div>
-                    <div class="col">
+                    <div class="col d-flex align-items-center">
                         <div class="card-body">
-                            <h2 class="card-title" style="color: #0D3B66; font-weight:bold">
+                            <h2 class="card-title mb-4" style="color: #0D3B66; font-weight:bold">
                                 <b>{{ $rs->restaurant_name }}</b>
                             </h2>
-                            <br>
 
                             <div class="d-grid gap-2 d-md-flex justify-content-md">
                                 {{-- EDIT --}}
@@ -78,7 +77,7 @@
             </div>
         @endforeach
         <br>
-        <div class="justify-content-center d-flex">
+        <div class="justify-content-center d-flex mt-3">
             {{ $restaurants->links() }}
         </div>
     </div>

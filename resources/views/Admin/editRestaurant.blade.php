@@ -58,6 +58,26 @@
                         </div>
                     @enderror
                 </div>
+                <div>
+                    <label for="" class="form-label">Kategori Restoran<span style="color: red">*</label>
+                    <select id="inputState" class="form-select @error('restaurant_category_id') is-invalid @enderror"
+                        name="restaurant_category_id">
+                        <option>Pilih Kategori Restoran</option>
+                        <option value=1 @if (old('restaurant_category_id') == 1) {{ 'selected' }} @endif>Indonesian Food
+                        </option>
+                        <option value=2 @if (old('restaurant_category_id') == 2) {{ 'selected' }} @endif>Chinese Food</option>
+                        <option value=3 @if (old('restaurant_category_id') == 3) {{ 'selected' }} @endif>Japanese Food
+                        </option>
+                        <option value=4 @if (old('restaurant_category_id') == 4) {{ 'selected' }} @endif>Western Food</option>
+                        <option value=5 @if (old('restaurant_category_id') == 5) {{ 'selected' }} @endif>Italian Food</option>
+                        <option value=6 @if (old('restaurant_category_id') == 6) {{ 'selected' }} @endif>Dessert</option>
+                    </select>
+                    @error('restaurant_category_id')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
                 <div class="form-group">
                     <label>Link Google Maps<span style="color: red">*</label>
                     <input type="url" class="form-control @error('restaurant_gmaps') is-invalid @enderror"
@@ -105,26 +125,6 @@
                                 .jpg/.jpeg/.png</span></label>
                         <input type="file" class="form-control-file" id="" name="restaurant_image">
                     </div>
-                </div>
-                <div>
-                    <label for="" class="form-label">Kategori Restoran<span style="color: red">*</label>
-                    <select id="inputState" class="form-select @error('restaurant_category_id') is-invalid @enderror"
-                        name="restaurant_category_id">
-                        <option>Pilih Kategori Restoran</option>
-                        <option value=1 @if (old('restaurant_category_id') == 1) {{ 'selected' }} @endif>Indonesian Food
-                        </option>
-                        <option value=2 @if (old('restaurant_category_id') == 2) {{ 'selected' }} @endif>Chinese Food</option>
-                        <option value=3 @if (old('restaurant_category_id') == 3) {{ 'selected' }} @endif>Japanese Food
-                        </option>
-                        <option value=4 @if (old('restaurant_category_id') == 4) {{ 'selected' }} @endif>Western Food</option>
-                        <option value=5 @if (old('restaurant_category_id') == 5) {{ 'selected' }} @endif>Italian Food</option>
-                        <option value=6 @if (old('restaurant_category_id') == 6) {{ 'selected' }} @endif>Dessert</option>
-                    </select>
-                    @error('restaurant_category_id')
-                        <div class="invalid-feedback">
-                            {{ $message }}
-                        </div>
-                    @enderror
                 </div>
                 <button type="submit" class="btn btn-warning mt-4 mb-3">Perbarui Data Restoran</button>
             </form>
