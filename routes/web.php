@@ -49,7 +49,7 @@ Route::middleware('admin')->group(function () {
     Route::delete('/admin/manage/restaurant/{id}', [AdminController::class, 'deleteRestaurant'])->name('deleteRestaurant');
     Route::delete('/admin/manage/foodblogger/{id}', [AdminController::class, 'deleteFoodBlogger'])->name('deleteFoodBlogger');
     Route::get('/admin/manage/restaurant/add', [AdminController::class, 'addRestaurantView'])->name('addRestaurantView');
-    Route::post('/admin/manage/restaurant/post', [AdminController::class, 'addRestaurantLogic'])->name('addRestaurantLogic');
+    Route::post('/admin/manage/restaurant/add/post', [AdminController::class, 'addRestaurantLogic'])->name('addRestaurantLogic');
     Route::get('/admin/manage/foodblogger/add', [AdminController::class, 'addFoodBloggerView'])->name('addFoodBloggerView');
-    Route::post('/admin/manage/foodblogger/add', [AdminController::class, 'addFoodBloggerLogic'])->name('addFoodBloggerLogic');
+    Route::post('/admin/manage/foodblogger/add/post', [AdminController::class, 'addFoodBloggerLogic'])->name('addFoodBloggerLogic');
 });
