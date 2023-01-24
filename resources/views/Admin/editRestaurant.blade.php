@@ -45,16 +45,16 @@
                     <select id="inputState" class="form-select @error('restaurant_city') is-invalid @enderror"
                         name="restaurant_city">
                         <option>Pilih Kota Restoran</option>
-                        <option value="Jakarta Barat" @if (old('restaurant_city') == 'Jakarta Barat') {{ 'selected' }} @endif>Jakarta
-                            Barat</option>
-                        <option value="Jakarta Pusat" @if (old('restaurant_city') == 'Jakarta Pusat') {{ 'selected' }} @endif>Jakarta
-                            Pusat</option>
-                        <option value="Jakarta Selatan" @if (old('restaurant_city') == 'Jakarta Selatan') {{ 'selected' }} @endif>Jakarta
-                            Selatan</option>
-                        <option value="Jakarta Timur" @if (old('restaurant_city') == 'Jakarta Timur') {{ 'selected' }} @endif>Jakarta
-                            Timur</option>
-                        <option value="Jakarta Utara" @if (old('restaurant_city') == 'Jakarta Utara') {{ 'selected' }} @endif>Jakarta
-                            Utara</option>
+                        <option value="Jakarta Barat" @if ($restaurant->restaurant_city == 'Jakarta Barat') selected @endif>Jakarta Barat
+                        </option>
+                        <option value="Jakarta Pusat" @if ($restaurant->restaurant_city == 'Jakarta Pusat') selected @endif>Jakarta Pusat
+                        </option>
+                        <option value="Jakarta Selatan" @if ($restaurant->restaurant_city == 'Jakarta Selatan') selected @endif>Jakarta Selatan
+                        </option>
+                        <option value="Jakarta Timur" @if ($restaurant->restaurant_city == 'Jakarta Timur') selected @endif>Jakarta Timur
+                        </option>
+                        <option value="Jakarta Utara" @if ($restaurant->restaurant_city == 'Jakarta Utara') selected @endif>Jakarta Utara
+                        </option>
                     </select>
                     @error('restaurant_city')
                         <div class="invalid-feedback">
@@ -67,14 +67,12 @@
                     <select id="inputState" class="form-select @error('restaurant_category_id') is-invalid @enderror"
                         name="restaurant_category_id">
                         <option>Pilih Kategori Restoran</option>
-                        <option value=1 @if (old('restaurant_category_id') == 1) {{ 'selected' }} @endif>Indonesian Food
-                        </option>
-                        <option value=2 @if (old('restaurant_category_id') == 2) {{ 'selected' }} @endif>Chinese Food</option>
-                        <option value=3 @if (old('restaurant_category_id') == 3) {{ 'selected' }} @endif>Japanese Food
-                        </option>
-                        <option value=4 @if (old('restaurant_category_id') == 4) {{ 'selected' }} @endif>Western Food</option>
-                        <option value=5 @if (old('restaurant_category_id') == 5) {{ 'selected' }} @endif>Italian Food</option>
-                        <option value=6 @if (old('restaurant_category_id') == 6) {{ 'selected' }} @endif>Dessert</option>
+                        <option value=1 @if ($restaurant->restaurant_category_id == 1) selected @endif>Indonesian Food</option>
+                        <option value=2 @if ($restaurant->restaurant_category_id == 2) selected @endif>Chinese Food</option>
+                        <option value=3 @if ($restaurant->restaurant_category_id == 3) selected @endif>Japanese Food</option>
+                        <option value=4 @if ($restaurant->restaurant_category_id == 4) selected @endif>Western Food</option>
+                        <option value=5 @if ($restaurant->restaurant_category_id == 5) selected @endif>Italian Food</option>
+                        <option value=6 @if ($restaurant->restaurant_category_id == 6) selected @endif>Dessert</option>
                     </select>
                     @error('restaurant_category_id')
                         <div class="invalid-feedback">
