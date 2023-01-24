@@ -14,12 +14,13 @@
 
         {{-- ADD PRODUCT blm dihubungkan dengan add page --}}
         <div class="d-grid gap-2 d-md-flex justify-content-md-center" style="margin-bottom: 1.25rem !important">
-            <form action="#" style="border-radius:25px">
+            <form action="{{ route('addFoodBloggerView') }}" style="border-radius:25px">
                 <button type="submit" class="btn" style="color: #FFFFFF; font-weight:bold; background-color: #0C3459">
                     Tambah Food Blogger </button>
             </form>
         </div>
 
+        {{-- Success Message --}}
         <div style="max-width: 700px;" class="mx-auto my-auto">
             @if (Session::get('success'))
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
