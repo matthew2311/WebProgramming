@@ -33,7 +33,7 @@
 
                 <div class="form-group mt-2">
                     <label class="fw-bold mb-2">Deskripsi Food Blogger<span style="color: red">*</label>
-                    <textarea type="long text" class="form-control" id="" rows="5" name="food_blogger_description">{{ old('food_blogger_description') }}</textarea>
+                    <textarea type="long text" class="form-control @error('food_blogger_description') is-invalid @enderror" id="" rows="5" name="food_blogger_description">{{ old('food_blogger_description') }}</textarea>
                     @error('food_blogger_description')
                         <div class="invalid-feedback">
                             {{ $message }}
