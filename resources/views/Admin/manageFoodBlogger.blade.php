@@ -47,7 +47,7 @@
                             <div class="d-grid gap-2 d-md-flex justify-content-md">
                                 {{-- EDIT --}}
                                 {{-- blm dihubungkan dengan edit page --}}
-                                <form action="#" style="background-color: #FDB221; border-radius: 25px">
+                                <form action="{{ route('updateFoodBloggerView', ['id' => $fb->id]) }}" style="background-color: #FDB221; border-radius: 25px">
                                     <button type="submit" class="btn white-link text-decoration-none bg-warning fs-5"
                                         style="color: #0D3B66; font-weight:bold">Edit Blogger</button>
                                 </form>

@@ -64,7 +64,7 @@ class AdminController extends Controller
 
         Restaurant::where('id', $request->id)->delete();
 
-        return redirect()->back()->with('success', 'Restaurant berhasil dihapus');
+        return redirect()->route('manageRestaurant')->with('success', 'Restoran berhasil dihapus');
     }
 
     public function deleteFoodBlogger(Request $request)
@@ -73,7 +73,7 @@ class AdminController extends Controller
         FoodBlogger::where('id', $request->id)->delete();
 
 
-        return redirect()->route('manageFoodBlogger');
+        return redirect()->route('manageFoodBlogger')->with('success', 'Food Blogger berhasil dihapus');
     }
 
     public function searchRestaurant(Request $request)
@@ -102,15 +102,11 @@ class AdminController extends Controller
     public function addRestaurantLogic(Request $request)
     {
         $request->validate([
-            'restaurant_name' => 'required',
+            'restaurant_name' => 'required|min:3',
             'restaurant_address' => 'required',
             'restaurant_city' => 'required',
-            'restaurant_gmaps' => 'required|url',
-            'restaurant_whatsapp_link' => 'required|url',
-            'restaurant_instagram_link' => 'url',
-            'restaurant_tiktok_link' => 'url',
-            'restaurant_gofood' => 'url',
-            'restaurant_grabfood' => 'url',
+            'restaurant_gmaps' => 'required',
+            'restaurant_whatsapp_link' => 'required',
             'restaurant_image' => 'required|mimes:png,jpg,jpeg',
             'restaurant_category_id' => 'required'
         ]);
@@ -126,7 +122,7 @@ class AdminController extends Controller
             'restaurant_name' => $request->restaurant_name,
             'restaurant_address' => $request->restaurant_address,
             'restaurant_city' => $request->restaurant_city,
-            'restaurant_gmaps' => $request->restaurant_gmpas,
+            'restaurant_gmaps' => $request->restaurant_gmaps,
             'restaurant_whatsapp_link' => $request->restaurant_whatsapp_link,
             'restaurant_instagram_link' => $request->restaurant_instagram_link,
             'restaurant_tiktok_link' => $request->restaurant_tiktok_link,
@@ -141,10 +137,45 @@ class AdminController extends Controller
 
     public function updateRestaurantView(Request $request)
     {
+        $restaurant = Restaurant::where('id', $request->id)->first();
+
+        return view('Admin.editRestaurant', compact('restaurant'));
     }
 
     public function updateRestaurantLogic(Request $request)
     {
+        $request->validate([
+            'restaurant_name' => 'required|min:3',
+            'restaurant_address' => 'required',
+            'restaurant_city' => 'required',
+            'restaurant_gmaps' => 'required',
+            'restaurant_whatsapp_link' => 'required',
+            'restaurant_image' => 'required|mimes:png,jpg,jpeg',
+            'restaurant_category_id' => 'required'
+        ]);
+
+        $original_name = $request->file('restaurant_image')->getClientOriginalName();
+        $original_ext = $request->file('restaurant_image')->getClientOriginalExtension();
+        $restaurant_image_filename = $original_name . time() . '.' . $original_ext;
+
+        $request->file('restaurant_image')->storeAs('public/images/restaurant', $restaurant_image_filename);
+        $restaurant_image_file = 'storage/images/restaurant/' . $restaurant_image_filename;
+
+        DB::table('restaurants')->where('id', '=', $request->id)->update([
+            'restaurant_name' => $request->restaurant_name,
+            'restaurant_address' => $request->restaurant_address,
+            'restaurant_city' => $request->restaurant_city,
+            'restaurant_gmaps' => $request->restaurant_gmaps,
+            'restaurant_whatsapp_link' => $request->restaurant_whatsapp_link,
+            'restaurant_instagram_link' => $request->restaurant_instagram_link,
+            'restaurant_tiktok_link' => $request->restaurant_tiktok_link,
+            'restaurant_gofood' => $request->restaurant_gofood,
+            'restaurant_grabfood' => $request->restaurant_grabfood,
+            'restaurant_image' => $restaurant_image_file,
+            'restaurant_category_id' => $request->restaurant_category_id
+        ]);
+
+        return redirect()->route('manageRestaurant')->with('success', 'Berhasil Memperbarui Data Restoran');
     }
 
     public function addFoodBloggerView()
@@ -155,11 +186,8 @@ class AdminController extends Controller
     public function addFoodBloggerLogic(Request $request)
     {
         $request->validate([
-            'food_blogger_name' => 'required',
+            'food_blogger_name' => 'required|min:3',
             'food_blogger_description' => 'required',
-            'food_blogger_ig_link' => 'url',
-            'food_blogger_tiktok_link' => 'url',
-            'food_blogger_youtube_link' => 'url',
             'food_blogger_image' => 'required|mimes:jpg,jpeg,png'
         ]);
 
@@ -184,9 +212,36 @@ class AdminController extends Controller
 
     public function updateFoodBloggerView(Request $request)
     {
+        $foodBlogger = FoodBlogger::where('id', $request->id)->first();
+
+        return view('Admin.editFoodBlogger', compact('foodBlogger'));
     }
 
     public function updateFoodBloggerLogic(Request $request)
     {
+        $request->validate([
+            'food_blogger_name' => 'required|min:3',
+            'food_blogger_description' => 'required',
+            'food_blogger_image' => 'required|mimes:jpg,jpeg,png'
+        ]);
+
+        $original_name = $request->file('food_blogger_image')->getClientOriginalName();
+        $original_ext = $request->file('food_blogger_image')->getClientOriginalExtension();
+        $foodBlogger_image_filename = $original_name . time() . '.' . $original_ext;
+
+        $request->file('food_blogger_image')->storeAs('public/images/foodblogger', $foodBlogger_image_filename);
+        $foodBlogger_image_file = 'storage/images/foodblogger/' . $foodBlogger_image_filename;
+
+        DB::table('food_bloggers')->where('id', '=', $request->id)->update([
+            'food_blogger_name' => $request->food_blogger_name,
+            'food_blogger_description' => $request->food_blogger_description,
+            'food_blogger_ig_link' => $request->food_blogger_ig_link,
+            'food_blogger_tiktok_link' => $request->food_blogger_tiktok_link,
+            'food_blogger_youtube_link' => $request->food_blogger_youtube_link,
+            'food_blogger_image' => $foodBlogger_image_file
+        ]);
+
+        return redirect()->route('manageFoodBlogger')->with('success', 'Berhasil Memperbarui Data Food Blogger');
+
     }
 }
