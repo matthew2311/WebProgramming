@@ -46,14 +46,14 @@ class AdminController extends Controller
 
     public function manageRestaurant()
     {
-        $restaurants = Restaurant::paginate(5)->withQueryString();
+        $restaurants = Restaurant::paginate(10)->withQueryString();
 
         return view('Admin.manageRestaurant', compact('restaurants'));
     }
 
     public function manageFoodBlogger()
     {
-        $foodBloggers = FoodBlogger::paginate(3)->withQueryString();
+        $foodBloggers = FoodBlogger::paginate(10)->withQueryString();
 
         return view('Admin.manageFoodBlogger', compact('foodBloggers'));
     }
