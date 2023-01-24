@@ -33,7 +33,7 @@
         <div style="max-width: 700px;" class="mx-auto my-auto">
             @if (Session::get('success2'))
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    {{ Session::get('success') }}
+                    {{ Session::get('success2') }}
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
