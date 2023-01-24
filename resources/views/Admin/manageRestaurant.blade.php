@@ -14,15 +14,16 @@
 
         {{-- ADD PRODUCT blm dihubungkan dengan add page --}}
         <div class="d-grid gap-2 d-md-flex justify-content-md-center" style="margin-bottom: 1.25rem !important">
-            <form action="#" style="border-radius:25px">
+            <form action="{{ route('addRestaurantView') }}" style="border-radius:25px">
                 <button type="submit" class="btn" style="color: #FFFFFF; font-weight:bold; background-color: #0C3459">
                     Tambah Restoran </button>
             </form>
         </div>
 
+        {{-- Success Message --}}
         <div style="max-width: 700px;" class="mx-auto my-auto">
             @if (Session::get('success'))
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
                     {{ Session::get('success') }}
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
@@ -46,7 +47,7 @@
                             <div class="d-grid gap-2 d-md-flex justify-content-md">
                                 {{-- EDIT --}}
                                 {{-- blm dihubungkan dengan edit page --}}
-                                <form action="#" style="background-color: #FDB221; border-radius: 25px">
+                                <form action="{{ route('updateRestaurantView', ['id' => $rs->id]) }}" style="background-color: #FDB221; border-radius: 25px">
                                     <button type="submit" class="btn white-link text-decoration-none bg-warning fs-5"
                                         style="color: #0D3B66; font-weight:bold">Edit Restoran</button>
                                 </form>

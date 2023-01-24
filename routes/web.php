@@ -48,4 +48,12 @@ Route::middleware('admin')->group(function () {
     Route::get('/admin/manage/foodblogger/search', [AdminController::class, 'searchFoodBlogger'])->name('searchFoodBlogger');
     Route::delete('/admin/manage/restaurant/{id}', [AdminController::class, 'deleteRestaurant'])->name('deleteRestaurant');
     Route::delete('/admin/manage/foodblogger/{id}', [AdminController::class, 'deleteFoodBlogger'])->name('deleteFoodBlogger');
+    Route::get('/admin/manage/restaurant/add', [AdminController::class, 'addRestaurantView'])->name('addRestaurantView');
+    Route::post('/admin/manage/restaurant/add/post', [AdminController::class, 'addRestaurantLogic'])->name('addRestaurantLogic');
+    Route::get('/admin/manage/restaurant/update/{id}', [AdminController::class, 'updateRestaurantView'])->name('updateRestaurantView');
+    Route::patch('/admin/manage/restaurant/update/post/{id}', [AdminController::class, 'updateRestaurantLogic'])->name('updateRestaurantLogic');
+    Route::get('/admin/manage/foodblogger/add', [AdminController::class, 'addFoodBloggerView'])->name('addFoodBloggerView');
+    Route::post('/admin/manage/foodblogger/add/post', [AdminController::class, 'addFoodBloggerLogic'])->name('addFoodBloggerLogic');
+    Route::get('/admin/manage/foodblogger/update/{id}', [AdminController::class, 'updateFoodBloggerView'])->name('updateFoodBloggerView');
+    Route::patch('/admin/manage/foodblogger/update/post/{id}', [AdminController::class, 'updateFoodBloggerLogic'])->name('updateFoodBloggerLogic');
 });
