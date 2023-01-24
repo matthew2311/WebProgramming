@@ -255,4 +255,47 @@ class AdminController extends Controller
         return redirect()->route('manageFoodBlogger')->with('success', 'Berhasil Memperbarui Data Food Blogger');
 
     }
+
+    public function addRecommendationView(){
+        $restaurants = Restaurant::all()->sortBy('restaurant_name');
+        $foodBloggers = FoodBlogger::all()->sortBy('food_blogger_name');
+
+        return view('Admin.addRecommendation', compact('restaurants', 'foodBloggers'));
+    }
+
+    public function addRecommendationLogic(Request $request){
+        $request->validate([
+            'restaurant_id' =>'required|integer',
+            'food_blogger_id' => 'required|integer'
+        ]);
+
+        DB::table('recommended_bies')->insert([
+            'restaurant_id' => $request->restaurant_id,
+            'food_blogger_id' => $request->food_blogger_id
+        ]);
+
+        return redirect()->route('manageRecommendation')->with('success', 'Berhasil Menambahkan Rekomendasi Baru');
+    }
+
+    public function updateRecommendationView(Request $request){
+        $recommendation = RecommendedBy::where('id', $request->id)->first();
+        $restaurants = Restaurant::all()->sortBy('restaurant_name');
+        $foodBloggers = FoodBlogger::all()->sortBy('food_blogger_name');
+
+        return view('Admin.editRecommendation', compact('recommendation', 'restaurants', 'foodBloggers'));
+    }
+
+    public function updateRecommendationLogic(Request $request){
+        $request->validate([
+            'restaurant_id' =>'required|integer',
+            'food_blogger_id' => 'required|integer'
+        ]);
+
+        DB::table('recommended_bies')->where('id', 'LIKE', $request->id)->update([
+            'restaurant_id' => $request->restaurant_id,
+            'food_blogger_id' => $request->food_blogger_id
+        ]);
+
+        return redirect()->route('manageRecommendation')->with('success', 'Berhasil Memperbarui Data Rekomendasi');
+    }
 }

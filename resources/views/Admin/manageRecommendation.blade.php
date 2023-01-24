@@ -14,7 +14,7 @@
 
     {{-- ADD PRODUCT blm dihubungkan dengan add page --}}
     <div class="d-grid gap-2 d-md-flex justify-content-md-center" style="margin-bottom: 1.25rem !important">
-        <form action="{{ route('addFoodBloggerView') }}" style="border-radius:25px">
+        <form action="{{ route('addRecommendationView') }}" style="border-radius:25px">
             <button type="submit" class="btn" style="color: #FFFFFF; font-weight:bold; background-color: #0C3459">
                 Tambah Rekomendasi </button>
         </form>
@@ -33,7 +33,7 @@
     <div style="max-width: 700px;" class="mx-auto my-auto">
         @if (Session::get('success2'))
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                {{ Session::get('success') }}
+                {{ Session::get('success2') }}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @endif
@@ -49,26 +49,32 @@
                 <div class="col">
                     <div class="card-body">
                         <h2 class="card-title" style="color: #0D3B66; font-weight:bold">
-                            <b>{{ $fb->food_blogger_name }}</b>
+                            <b>{{ $rc->restaurant->restaurant_name }}</b>
                         </h2>
+                        <h5 class="card-title" style="color: #0D3B66; font-weight:bold">
+                            <b>Direkomendasikan oleh</b>
+                        </h5>
+                        <h4 class="card-title" style="color: #0D3B66; font-weight:bold">
+                            <b>{{ $rc->foodBlogger->food_blogger_name }}</b>
+                        </h4>
                         <br>
 
                         <div class="d-grid gap-2 d-md-flex justify-content-md">
                             {{-- EDIT --}}
                             {{-- blm dihubungkan dengan edit page --}}
-                            <form action="{{ route('updateFoodBloggerView', ['id' => $fb->id]) }}" style="background-color: #FDB221; border-radius: 25px">
+                            <form action="{{ route('updateRecommendationView', ['id' => $rc->id]) }}" style="background-color: #FDB221; border-radius: 25px">
                                 <button type="submit" class="btn white-link text-decoration-none bg-warning fs-5"
                                     style="color: #0D3B66; font-weight:bold">Edit Rekomendasi</button>
                             </form>
 
                             {{-- DELETE --}}
-                            <form action="{{ route('deleteRecommendation', ['id' => $fb->id]) }}"
+                            <form action="{{ route('deleteRecommendation', ['id' => $rc->id]) }}"
                                 style="background-color: #FF0000; border-radius: 25px" method="POST">
                                 @method('delete')
                                 @csrf
                                 <button class="btn btn-danger fs-5" type="submit"
                                     style="color: #FFFFFF; font-weight:bold">
-                                    Hapus Food Blogger
+                                    Hapus Rekomendasi
                                 </button>
                             </form>
                         </div>
@@ -79,7 +85,7 @@
     @endforeach
     <br>
     <div class="justify-content-center d-flex">
-        {{ $foodBloggers->links() }}
+        {{ $recommendations->links() }}
     </div>
 </div>
 @endsection
