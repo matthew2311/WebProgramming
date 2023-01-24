@@ -117,11 +117,11 @@ class AdminController extends Controller
         $request->validate([
             'restaurant_name' => 'required|min:3',
             'restaurant_address' => 'required',
-            'restaurant_city' => 'required',
+            'restaurant_city' => 'required|string',
             'restaurant_gmaps' => 'required',
             'restaurant_whatsapp_link' => 'required',
             'restaurant_image' => 'required|mimes:png,jpg,jpeg',
-            'restaurant_category_id' => 'required'
+            'restaurant_category_id' => 'required|integer'
         ]);
 
         $original_name = $request->file('restaurant_image')->getClientOriginalName();
@@ -160,11 +160,11 @@ class AdminController extends Controller
         $request->validate([
             'restaurant_name' => 'required|min:3',
             'restaurant_address' => 'required',
-            'restaurant_city' => 'required',
+            'restaurant_city' => 'required|string',
             'restaurant_gmaps' => 'required',
             'restaurant_whatsapp_link' => 'required',
             'restaurant_image' => 'required|mimes:png,jpg,jpeg',
-            'restaurant_category_id' => 'required'
+            'restaurant_category_id' => 'required|integer'
         ]);
 
         $original_name = $request->file('restaurant_image')->getClientOriginalName();
