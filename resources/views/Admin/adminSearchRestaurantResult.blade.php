@@ -15,15 +15,6 @@
                 aria-label="Search">
         </form>
 
-        <div style="max-width: 86.5%;" class="mx-auto my-auto mt-3">
-            @if (Session::get('success'))
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    {{ Session::get('success') }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            @endif
-        </div>
-
         @if (count($search_results) < 1)
             <h2 class="mt-3 text-center">Maaf, Kami Tidak Dapat Menemukan restoran yang Anda Cari.</h2>
         @else
