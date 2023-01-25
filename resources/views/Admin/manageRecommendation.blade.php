@@ -52,7 +52,7 @@
                                 <h5 class="card-title d-flex mb-3" style="color: #0D3B66; font-weight:bold">
                                     <img src="https://cdn-icons-png.flaticon.com/512/411/411724.png" height="25px"
                                         width="25px">
-                                    <p class="card-text" style="margin-top: 1.5px; margin-left: 3px;">
+                                    <p class="card-text" style="margin-top: 2.5px; margin-left: 3px;">
                                         <b>Direkomendasikan oleh {{ $rc->foodBlogger->food_blogger_name }}</b>
                                     </p>
                                 </h5>

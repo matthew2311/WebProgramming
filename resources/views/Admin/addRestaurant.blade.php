@@ -14,7 +14,7 @@
         </div>
 
         <div class="card p-4" style="color: #0D3B66">
-            <h2> <b>Hasil Pencarian Food Blogger</b></h2>
+            <h2> <b>Tambah Restoran     </b></h2>
             <form action="{{ route('addRestaurantLogic') }}" style="font-weight: bold" method="POST"
                 enctype="multipart/form-data">
                 @csrf

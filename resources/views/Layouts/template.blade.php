@@ -116,7 +116,7 @@
         </div>
     </header>
 
-    <div class="{{ request()->is('admin/*') ? 'admin' : 'generalUser' }}">
+    <div class="{{ request()->is('admin/*') ? 'admin' : 'generalUser' }}" style="{{ request()->is('restaurant/detail/*') || request()->is('foodblogger/detail/*') ? 'background-color: #CCD2E3; padding-bottom: 2rem' : '' }}">
         @yield('body')
     </div>
 

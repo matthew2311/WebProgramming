@@ -10,34 +10,36 @@
             <h2 style="color: #0D3B66"><b>Detail Food Blogger</b></h2>
         </div>
 
-        <div class="card mx-auto my-auto mt-3 p-3" style="width: 1000px; background-color: #EF8354">
+        <div class="card mx-auto my-auto mt-3 p-3" style="width: 1000px;">
             <div class="row g-0">
                 <div class="col-md-4">
-                    <img src="{{ asset($foodBlogger->food_blogger_image) }}" style="height: 400px !important; width: 400px !important" class="img-fluid rounded-3" alt="...">
+                    <img src="{{ asset($foodBlogger->food_blogger_image) }}"
+                        style="height: 400px !important; width: 400px !important" class="img-fluid rounded-3" alt="...">
                 </div>
                 <div class="col-md-8">
-                    <div class="card-body" style="color: white">
+                    <div class="card-body" style="color: #0D3B66"">
                         <h2 class="card-title"><b>{{ $foodBlogger->food_blogger_name }}</b></h2>
                         <p class="card-text fs-4">
                             {{ $foodBlogger->food_blogger_description }} <br>
                             @if ($foodBlogger->food_blogger_ig_link != null)
                                 <a href="{{ $foodBlogger->food_blogger_ig_link }}" target="_blank"
-                                    style="color:#EF8354; margin-right: 3px">
+                                    style="color: ; margin-right: 3px; color: white">
                                     <img src="https://www.svgrepo.com/show/452229/instagram-1.svg" width="35px"
                                         height="35px" style="margin-top: 5px">
                                 </a>
                             @endif
                             @if ($foodBlogger->food_blogger_tiktok_link != null)
                                 <a href="{{ $foodBlogger->food_blogger_tiktok_link }}" target="_blank"
-                                    style="margin-right: 3px; color:#EF8354">
+                                    style="margin-right: 3px; color:white">
                                     <img src="https://www.svgrepo.com/show/303260/tiktok-logo-logo.svg" width="30px"
                                         height="30px" style="margin-top: 5px">
                                 </a>
                             @endif
                             @if ($foodBlogger->food_blogger_youtube_link != null)
-                                <a href="{{ $foodBlogger->food_blogger_youtube_link }}" target="_blank">
-                                    <img src="https://www.svgrepo.com/show/448261/youtube.svg" width="40px"
-                                        height="40px" style="margin-top: 5px">
+                                <a href="{{ $foodBlogger->food_blogger_youtube_link }}" target="_blank"
+                                    style="margin-right: 3px; color:white">
+                                    <img src="https://www.svgrepo.com/show/448261/youtube.svg" width="40px" height="40px"
+                                        style="margin-top: 5px">
                                 </a>
                             @endif
                         </p>
@@ -50,9 +52,9 @@
             @if (count($foodBloggerRec) < 1)
                 <h2>Maaf, Belum Ada Restoran yang Bisa Ditampilkan untuk Saat Ini. Terima Kasih.</h2>
             @else
-                <div class="row pt-1 mt-4">
+                <div class="row mt-5">
                     @foreach ($foodBloggerRec as $fcr)
-                        <div class="col-sm-4 mb-4" style="min-width: 440px">
+                        <div class="col-sm-4" style="min-width: 440px">
                             <a href="{{ route('restaurantDetail', ['id' => $fcr->restaurant_id]) }}"
                                 style="text-decoration: none">
                                 <div class="card home br-2" style="width: 100%">
