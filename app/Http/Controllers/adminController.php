@@ -70,7 +70,7 @@ class AdminController extends Controller
         RecommendedBy::where('restaurant_id', $request->id)->delete();
         Restaurant::where('id', $request->id)->delete();
 
-        return redirect()->route('manageRestaurant')->with('success2', 'Restoran berhasil dihapus');
+        return redirect()->route('manageRestaurant')->with('success', 'Restoran berhasil dihapus');
     }
 
     public function deleteFoodBlogger(Request $request)
@@ -79,14 +79,14 @@ class AdminController extends Controller
         FoodBlogger::where('id', $request->id)->delete();
 
 
-        return redirect()->route('manageFoodBlogger')->with('success2', 'Food Blogger berhasil dihapus');
+        return redirect()->route('manageFoodBlogger')->with('success', 'Food Blogger berhasil dihapus');
     }
 
     public function deleteRecommendation(Request $request)
     {
         RecommendedBy::where('id', $request->id)->delete();
 
-        return redirect()->route('manageRecommendation')->with('success2', 'Rekomendasi berhasil dihapus');
+        return redirect()->route('manageRecommendation')->with('success', 'Rekomendasi berhasil dihapus');
     }
 
     public function searchRestaurant(Request $request)

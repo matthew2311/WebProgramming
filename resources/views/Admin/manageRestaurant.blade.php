@@ -23,19 +23,17 @@
         {{-- Success Message --}}
         <div style="max-width: 700px;" class="mx-auto my-auto">
             @if (Session::get('success'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    {{ Session::get('success') }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11;">
+                <div class="toast align-items-center text-white border-0 fade show" style="background-color: #0C3459 !important" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="d-flex" style="padding: 1%">
+                        <div class="toast-body">
+                            {{ Session::get('success') }}
+                        </div>
+                        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                            aria-label="Close"></button>
+                    </div>
                 </div>
-            @endif
-        </div>
-
-        <div style="max-width: 700px;" class="mx-auto my-auto">
-            @if (Session::get('success2'))
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    {{ Session::get('success2') }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
+            </div>
             @endif
         </div>
 
@@ -56,7 +54,8 @@
                                 <div class="d-grid gap-2 d-md-flex justify-content-md">
                                     {{-- EDIT --}}
                                     {{-- blm dihubungkan dengan edit page --}}
-                                    <form action="{{ route('updateRestaurantView', ['id' => $rs->id]) }}" style="background-color: #FDB221; border-radius: 25px">
+                                    <form action="{{ route('updateRestaurantView', ['id' => $rs->id]) }}"
+                                        style="background-color: #FDB221; border-radius: 25px">
                                         <button type="submit" class="btn white-link text-decoration-none bg-warning"
                                             style="color: #0D3B66; font-weight:bold">Edit Restoran</button>
                                     </form>
