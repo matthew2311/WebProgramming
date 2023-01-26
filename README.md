@@ -1,3 +1,6 @@
+Evoba adalah website untuk mencari tempat makan yang direkomendasikan oleh para food blogger di sekitar Jakarta. Sekarang dengan banyaknya media sosial seperti Tiktok dan Instagram, seringkali kita temukan banyak rekomendasi restoran atau cafe yg bisa jadi tempat hangout kita.
+
+Untuk menjalankan project ini dapat mengikuti langkah-langkah berikut:
 1. Download project menggunakan "git clone https://github.com/matthew2311/WebProgramming.git"
 2. Jalankan XAMPP, start Apache dan MySQL, kemudian klik Admin pada bagian MySQL
 3. Buat database baru
